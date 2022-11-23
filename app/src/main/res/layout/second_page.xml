@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/subway_logo2"></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_button2"
+            android:text="이벤트 메뉴"
+            android:layout_margin="5dp"
+            >
+        </Button>
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_button2"
+            android:text="버거 메뉴"
+            android:layout_margin="5dp"
+            >
+        </Button>
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_button2"
+            android:text="사이드 메뉴"
+            android:layout_margin="5dp"
+            >
+        </Button>
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_button2"
+            android:text="음료 메뉴"
+            android:layout_margin="5dp"
+            >
+        </Button>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:text="어떤 버거?">
+    </TextView>
+    <GridLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="3"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        >
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button2"
+            android:drawableTop="@drawable/burger1xml"
+            android:text="버거1"></Button>
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="버거2"
+            android:background="@drawable/corner_button2"
+            android:drawableTop="@drawable/burger2xml"
+            android:layout_margin="5dp"
+            ></Button>
+
+        <Button
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button2"
+            android:drawableTop="@drawable/burger1xml"
+            android:text="버거3"></Button>
+
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="버거4"
+            android:background="@drawable/corner_button2"
+            android:drawableTop="@drawable/burger1xml"
+            android:layout_margin="5dp"
+            ></Button>
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="버거5"
+            android:background="@drawable/corner_button2"
+            android:drawableTop="@drawable/burger1xml"
+            android:layout_margin="5dp"
+            ></Button>
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="버거1"
+            android:background="@drawable/corner_button2"
+            android:layout_margin="5dp"
+            ></Button>
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="버거1"
+            android:background="@drawable/corner_button2"
+            android:layout_margin="5dp"
+            ></Button>
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="버거1"
+            android:background="@drawable/corner_button2"
+            android:layout_margin="5dp"
+            ></Button>
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="버거1"
+            android:background="@drawable/corner_button2"
+            android:drawableTop="@drawable/burger1xml"
+            android:layout_margin="5dp"
+            ></Button>
+    </GridLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text="현재 주문 내역: ">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text="총 금액: ">
+            </TextView>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/corner_button2"
+            android:textSize="20dp"
+            android:text="주문하기">
+
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>
