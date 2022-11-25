@@ -55,6 +55,27 @@ class Sandwich(
         vege = newVege.deepCopy()
     }
 
+    fun setVege(vegeName: String, boolean: Boolean)
+    {
+        when (vegeName)
+        {
+            "양상추"  -> vege.changeLettuce(boolean)
+            "토마토"  -> vege.changeTomato(boolean)
+            "오이"   -> vege.changeCucumter(boolean)
+            "피망"   -> vege.changePepper(boolean)
+            "양파"   -> vege.changeOnion(boolean)
+            "피클"   -> vege.changePickle(boolean)
+            "올리브"  -> vege.changeOlive(boolean)
+            "할라피뇨" -> vege.changeJalapeno(boolean)
+            "아보카도" -> vege.changeAvocado(boolean)
+            else   ->
+            {
+                println("invalid vegetable name")
+                exitProcess(1)
+            }
+        }
+    }
+
     fun addSauce(newSauceID: Int): Boolean
     {
         return sauceID.add(newSauceID)

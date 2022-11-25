@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity()
         sandwichTest.removeSauce(201)
         sandwichTest.setCheeseID(1)
         sandwichTest.showInfo()
+        sandwichTest.setVege("피망", true)
+        sandwichTest.showInfo()
     }
 
 
