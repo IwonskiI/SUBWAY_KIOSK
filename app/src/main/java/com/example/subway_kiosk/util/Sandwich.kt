@@ -76,6 +76,27 @@ class Sandwich(
         }
     }
 
+    fun setVege(vegeID: Int, boolean: Boolean)
+    {
+        when (vegeID)
+        {
+            1    -> vege.changeLettuce(boolean)
+            2    -> vege.changeTomato(boolean)
+            3    -> vege.changeCucumter(boolean)
+            4    -> vege.changePepper(boolean)
+            5    -> vege.changeOnion(boolean)
+            6    -> vege.changePickle(boolean)
+            7    -> vege.changeOlive(boolean)
+            8    -> vege.changeJalapeno(boolean)
+            9    -> vege.changeAvocado(boolean)
+            else ->
+            {
+                println("invalid vegetable ID")
+                exitProcess(1)
+            }
+        }
+    }
+
     fun addSauce(newSauceID: Int): Boolean
     {
         return sauceID.add(newSauceID)

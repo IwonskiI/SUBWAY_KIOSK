@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity()
         sauceList.add(102)
         sauceList.add(201)
 
-
         sandwichTest = Sandwich(
             23, "테스트", 3, 3, Vegetable(
                 lettuce = false,
