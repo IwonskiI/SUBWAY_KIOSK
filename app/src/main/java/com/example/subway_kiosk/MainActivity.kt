@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.subway_kiosk.util.*
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+class MainActivity : AppCompatActivity()
+{
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         var sandwichTest: Sandwich
 
-        var sauceList = ArrayList<Sauce>()
-        sauceList.add(Sauce(102))
-        sauceList.add(Sauce((201)))
+        var sauceList = ArrayList<Int>()
+        sauceList.add(102)
+        sauceList.add(201)
+
 
         sandwichTest = Sandwich(
             23, "테스트", 3, 3, Vegetable(
@@ -28,6 +31,11 @@ class MainActivity : AppCompatActivity() {
                 avacado = false
             ), sauceList
         )
+        sandwichTest.showInfo()
+        sandwichTest.addSauce(501)
+        sandwichTest.showInfo()
+        sandwichTest.removeSauce(201)
+        sandwichTest.setCheeseID(1)
         sandwichTest.showInfo()
     }
 
