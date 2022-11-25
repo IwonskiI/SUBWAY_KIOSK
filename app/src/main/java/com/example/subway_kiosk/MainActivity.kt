@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //////////////////////////////test////////////////////////////////////
         var sandwichTest: Sandwich
 
         var sauceList = ArrayList<Int>()
@@ -39,6 +40,8 @@ class MainActivity : AppCompatActivity()
         sandwichTest.showInfo()
         sandwichTest.setVege("피망", true)
         sandwichTest.showInfo()
+
+        //////////////////////////////test////////////////////////////////////
     }
 
 
