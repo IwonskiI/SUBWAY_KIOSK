@@ -8,6 +8,6 @@
         android:color="@color/subway_gr">
     </stroke>
     <corners
-        android:radius="30dp">
+        android:radius="20dp">
     </corners>
 </shape>
