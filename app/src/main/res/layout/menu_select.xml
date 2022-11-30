@@ -20,9 +20,9 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:src="@drawable/subway_menuselect" />
 
         <TextView
@@ -42,11 +42,11 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_gravity="center"
-        android:layout_marginVertical="5dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
         android:background="@drawable/corner_button3_selected"
-        android:text="고기 1에 대한 메뉴"
         android:gravity="center"
+        android:text="고기 1에 대한 메뉴"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="normal" />
@@ -54,17 +54,18 @@
     <GridLayout
         android:id="@+id/menuselect_meat1_grid"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
         android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:columnCount="3"
-        android:rowCount="2"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:rowCount="2">
 
         <Button
-            android:layout_height="80dp"
+            android:id="@+id/button101"
+            android:layout_height="100dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -74,34 +75,27 @@
             android:textSize="12sp" />
 
         <Button
-            android:layout_height="80dp"
+            android:id="@+id/button102"
+            android:layout_height="100dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_bacon_xml"
+            android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="베이컨"
+            android:text="햄"
             android:textSize="12sp" />
 
         <Button
-            android:layout_height="80dp"
+            android:id="@+id/button103"
+            android:layout_height="100dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_pepperoni_xml"
+            android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="페퍼로니"
+            android:text="햄"
             android:textSize="12sp" />
 
-        <Button
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_pepperoni_xml"
-            android:onClick="btnClick"
-            android:text="페퍼로니"
-            android:textSize="12sp" />
     </GridLayout>
 
     <TextView
@@ -109,28 +103,30 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_gravity="center"
-        android:layout_marginVertical="5dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
         android:background="@drawable/corner_button3_selected"
-        android:text="고기 2에 대한 메뉴"
         android:gravity="center"
+        android:text="고기 2에 대한 메뉴"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="normal" />
 
     <GridLayout
+        android:id="@+id/menuselect_meat2_grid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
         android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:columnCount="3"
-        android:rowCount="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:rowCount="1">
 
         <Button
-            android:layout_height="80dp"
+            android:id="@+id/button201"
+            android:layout_height="100dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -140,24 +136,27 @@
             android:textSize="12sp" />
 
         <Button
-            android:layout_height="80dp"
+            android:id="@+id/button202"
+            android:layout_height="100dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_bacon_xml"
+            android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="베이컨"
+            android:text="햄"
             android:textSize="12sp" />
 
         <Button
-            android:layout_height="80dp"
+            android:id="@+id/button203"
+            android:layout_height="100dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_pepperoni_xml"
+            android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="페퍼로니"
+            android:text="햄"
             android:textSize="12sp" />
+
     </GridLayout>
 
     <Button
