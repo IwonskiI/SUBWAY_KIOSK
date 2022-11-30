@@ -16,11 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:contentDescription="TODO"
-            android:layout_marginTop="-15dp"
             android:src="@drawable/subway_logo2" />
 
         <ImageView
             android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:src="@drawable/subway_meatselect" />
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="180dp"
             android:text="선호하시는 재료를 선택해주세요"
             android:textColor="@color/subway_gr"
             android:textSize="15sp"
@@ -43,12 +43,11 @@
         android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:columnCount="4"
-        android:orientation="horizontal"
-        android:rowCount="4">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/meatSelect_ham"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -59,7 +58,7 @@
 
         <Button
             android:id="@+id/meatSelect_bacon"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -70,7 +69,7 @@
 
         <Button
             android:id="@+id/meatSelect_pepperoni"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -81,7 +80,7 @@
 
         <Button
             android:id="@+id/meatSelect_salami"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -92,7 +91,7 @@
 
         <Button
             android:id="@+id/meatSelect_rotisserie_chicken"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -103,7 +102,7 @@
 
         <Button
             android:id="@+id/meatSelect_chicken_breast_ham"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -114,7 +113,7 @@
 
         <Button
             android:id="@+id/meatSelect_pulled_pork_bbq"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -125,7 +124,7 @@
 
         <Button
             android:id="@+id/meatSelect_spicy_bbq"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -136,7 +135,7 @@
 
         <Button
             android:id="@+id/meatSelect_chicken_breast"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -147,7 +146,7 @@
 
         <Button
             android:id="@+id/meatSelect_steak"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -158,7 +157,7 @@
 
         <Button
             android:id="@+id/meatSelect_chicken_teriyaki"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -169,7 +168,7 @@
 
         <Button
             android:id="@+id/meatSelect_shrimp"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -180,7 +179,7 @@
 
         <Button
             android:id="@+id/meatSelect_egg_mayo"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -191,7 +190,7 @@
 
         <Button
             android:id="@+id/meatSelect_tuna"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -202,7 +201,7 @@
 
         <Button
             android:id="@+id/meatSelect_avocado"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -213,7 +212,7 @@
 
         <Button
             android:id="@+id/meatSelect_vege"
-            android:layout_rowWeight="1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
@@ -228,7 +227,7 @@
         android:layout_width="80dp"
         android:layout_height="64dp"
         android:layout_gravity="end"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/corner_button4"
         android:text="다음"
