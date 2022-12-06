@@ -41,6 +41,10 @@ class Sandwich(
         sauceNameSet.put(503, "후추")
     }
 
+    fun getSandwichName():String
+    {
+        return sandwichName
+    }
     fun setBreadID(newID: Int)
     {
         breadID = newID
@@ -170,5 +174,238 @@ class Sandwich(
         print("sauce(ArrayList): ")
         sauceID.forEach { print("[" + sauceNameSet.getValue(it) + "] ") }
         println("")
+    }
+
+    companion object
+    {
+        fun loadSandwichData(v: View): HashMap<Int, ArrayList<Sandwich>>
+        {
+            val menuList = hashMapOf<Int, ArrayList<Sandwich>>(
+                v.findViewById<Button>(R.id.meatSelect_ham).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        101,
+                        "이탈리안 비엠티",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        102,
+                        "써브웨이 클럽",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        103,
+                        "햄",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_bacon).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        102,
+                        "써브웨이 클럽",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        104,
+                        "치킨 베이컨 아보카도",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        105,
+                        "비엘티",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_pepperoni).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        101,
+                        "이탈리안 비엠티",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        106,
+                        "스파이시 이탈리안",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_salami).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        101,
+                        "이탈리안 비엠티",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        106,
+                        "스파이시 이탈리안",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_rotisserie_chicken).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        107,
+                        "로티세리 바비큐 치킨",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_chicken_breast_ham).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        102,
+                        "써브웨이 클럽",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        104,
+                        "치킨 베이컨 아보카도",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        108,
+                        "치킨 슬라이스",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_pulled_pork_bbq).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        109,
+                        "풀드 포크 바비큐",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    ), Sandwich(
+                        110,
+                        "K-바비큐",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_spicy_bbq).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        111,
+                        "스파이시 바비큐",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_chicken_breast).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        112,
+                        "로스트 치킨",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_steak).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        113,
+                        "스테이크 & 치즈",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_chicken_teriyaki).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        114,
+                        "치킨 데리야끼",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_shrimp).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        115,
+                        "쉬림프",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_egg_mayo).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        116,
+                        "에그마요",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_tuna).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        117,
+                        "참치",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_avocado).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        107,
+                        "치킨 베이컨 아보카도",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                ),
+                v.findViewById<Button>(R.id.meatSelect_vege).id to arrayListOf<Sandwich>(
+                    Sandwich(
+                        118,
+                        "베지",
+                        1,
+                        1,
+                        Vegetable(true, true, true, true, true, true, true, true, false),
+                        arrayListOf<Int>(301, 101)
+                    )
+                )
+            )
+            return menuList
+        }
     }
 }

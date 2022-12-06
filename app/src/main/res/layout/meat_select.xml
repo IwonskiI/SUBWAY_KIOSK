@@ -224,8 +224,8 @@
 
     <Button
         android:id="@+id/meatSelect_toNext"
-        android:layout_width="80dp"
-        android:layout_height="64dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_gravity="end"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
