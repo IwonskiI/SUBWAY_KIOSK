@@ -1,7 +1,6 @@
 package com.example.subway_kiosk.order
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -9,8 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.subway_kiosk.R
-import com.example.subway_kiosk.util.Sandwich
-import com.example.subway_kiosk.util.Vegetable
 
 
 class MeatSelect : AppCompatActivity()

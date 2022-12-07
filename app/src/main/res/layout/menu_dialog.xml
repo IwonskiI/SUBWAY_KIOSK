@@ -59,7 +59,7 @@
             android:layout_height="48dp"
             android:layout_marginHorizontal="5dp"
             android:background="@drawable/corner_button4"
-            android:text="뒤로가기"
+            android:text="취소"
             android:textColor="@color/white"
             android:textSize="16sp" />
 

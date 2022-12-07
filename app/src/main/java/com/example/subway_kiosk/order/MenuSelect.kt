@@ -103,8 +103,11 @@ class MenuSelect : AppCompatActivity()
     {
         val selectedBtn = findViewById<Button>(v.id)
         val dialog = BottomSheetDialog(this, R.style.SubWayDialog)
+
         dialog.setContentView(R.layout.menu_dialog)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent);
+        val prevBtn = dialog.findViewById<Button>(R.id.dialog_toPrev)
+        prevBtn?.setOnClickListener({ dialog.hide() })
 
         selectedBtn.text
         Sandwich.menuList.forEach {
