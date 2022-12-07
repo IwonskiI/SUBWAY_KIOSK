@@ -5,15 +5,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.example.subway_kiosk.R
 import com.example.subway_kiosk.util.Sandwich
-import com.example.subway_kiosk.util.Vegetable
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.lang.Integer.min
-import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 class MenuSelect : AppCompatActivity()
 {
@@ -23,7 +19,7 @@ class MenuSelect : AppCompatActivity()
         setContentView(R.layout.menu_select)
 
         val meatSelectView = View.inflate(this, R.layout.meat_select, null)
-        val menuList = Sandwich.loadSandwichData(meatSelectView)
+        val menuListByMeat = Sandwich.getMenuListByMeat(meatSelectView)
 
         if (intent.hasExtra("selectedMeat"))
         {
@@ -52,21 +48,32 @@ class MenuSelect : AppCompatActivity()
             {
                 val menuSelectText: String
 
-                menuList.getValue(selected.get(0)).forEach { it.showInfo() }
-                for (i: Int in 0 .. min(2, menuList.getValue(selected.get(0)).size - 1))
+//                menuListByMeat.getValue(selected.get(0)).forEach { it.showInfo() }
+                for (i: Int in 0 .. min(2, menuListByMeat.getValue(selected.get(0)).size - 1))
                 {
-                    selectedMeatButtonList1[i].setText(menuList.getValue(selected.get(0))[i].getSandwichName())
-                    selectedMeatButtonList1[i].setCompoundDrawablesWithIntrinsicBounds(
-                        null, getDrawable(R.drawable.meat_select_bacon_xml), null, null
-                    )
                     selectedMeatButtonList1[i].isVisible = true
+                    selectedMeatButtonList1[i].setText(menuListByMeat.getValue(selected.get(0))[i].getSandwichName())
+                    val id = menuListByMeat.getValue(selected.get(0))[i].getSandwichID()
+                    selectedMeatButtonList1[i].setCompoundDrawablesWithIntrinsicBounds(
+                        null, getDrawable(Sandwich.hashMapIDtoXML.getValue(id)), null, null
+                    )
                 }
 
                 if (selected.size == 2)
                 {
-                    if (menuList.getValue(selected[0]).size < menuList.getValue(selected[1]).size) Collections.swap(
-                        selected, 0, 1
-                    )
+                    selectedMeatTextView2.isVisible = true
+                    selectedMeatGridLayout2.isVisible = true
+
+                    selectedMeatTextView2.setText(meatSelectView.findViewById<Button>(selected.get(1)).text)
+                    for (i: Int in 0 .. min(2, menuListByMeat.getValue(selected.get(1)).size - 1))
+                    {
+                        selectedMeatButtonList2[i].isVisible = true
+                        selectedMeatButtonList2[i].setText(menuListByMeat.getValue(selected.get(1))[i].getSandwichName())
+                        val id = menuListByMeat.getValue(selected.get(1))[i].getSandwichID()
+                        selectedMeatButtonList2[i].setCompoundDrawablesWithIntrinsicBounds(
+                            null, getDrawable(Sandwich.hashMapIDtoXML.getValue(id)), null, null
+                        )
+                    }
 
                     menuSelectText = buildString {
                         append("${meatSelectView.findViewById<Button>(selected.get(0)).text}, ")
@@ -74,16 +81,6 @@ class MenuSelect : AppCompatActivity()
                         append("에 대한 검색 결과입니다")
                     }
 
-                    selectedMeatTextView2.setText(meatSelectView.findViewById<Button>(selected.get(1)).text)
-
-                    for (i: Int in 0 .. min(2, menuList.getValue(selected.get(1)).size - 1))
-                    {
-                        selectedMeatButtonList2[i].setText(menuList.getValue(selected.get(1))[i].getSandwichName())
-                        selectedMeatButtonList2[i].isVisible = true
-                    }
-
-                    selectedMeatTextView2.isVisible = true
-                    selectedMeatGridLayout2.isVisible = true
                 }
                 else menuSelectText = buildString {
                     append("${meatSelectView.findViewById<Button>(selected.get(0)).text}")
@@ -95,10 +92,32 @@ class MenuSelect : AppCompatActivity()
             }
         }
 
-        val nextBtn = findViewById<Button>(R.id.menuSelect_toPrev)
-        nextBtn.setOnClickListener {
+        val prevBtn = findViewById<Button>(R.id.menuSelect_toPrev)
+        prevBtn.setOnClickListener {
             val nextIntent = Intent(this, MeatSelect::class.java)
             startActivity(nextIntent)
         }
+    }
+
+    fun btnClick(v: View)
+    {
+        val selectedBtn = findViewById<Button>(v.id)
+        val dialog = BottomSheetDialog(this, R.style.SubWayDialog)
+        dialog.setContentView(R.layout.menu_dialog)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent);
+
+        selectedBtn.text
+        Sandwich.menuList.forEach {
+            if (it.getSandwichName().equals(selectedBtn.text))
+            {
+                var sandwichNameTextView = dialog.findViewById<TextView>(R.id.dialog_name)
+                sandwichNameTextView?.setText(it.getSandwichName())
+
+                var sandwichImgView = dialog.findViewById<ImageView>(R.id.dialog_img)
+                sandwichImgView?.setImageResource(Sandwich.hashMapIDtoXML.getValue(it.getSandwichID()))
+            }
+        }
+
+        dialog.show()
     }
 }
