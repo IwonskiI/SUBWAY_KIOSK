@@ -13,57 +13,147 @@ class Vegetable(
     private var pickle: Boolean,
     private var olive: Boolean,
     private var jalapeno: Boolean,
-    private var avacado: Boolean
+    private var avocado: Boolean
 ) : Parcelable
 {
-    fun changeLettuce(toChange: Boolean)
+    fun getLettuce(): Boolean
+    {
+        return lettuce
+    }
+
+    fun getTomato(): Boolean
+    {
+        return tomato
+    }
+
+    fun getCucumber(): Boolean
+    {
+        return cucumber
+    }
+
+    fun getPepper(): Boolean
+    {
+        return pepper
+    }
+
+    fun getOnion(): Boolean
+    {
+        return onion
+    }
+
+    fun getPickle(): Boolean
+    {
+        return pickle
+    }
+
+    fun getOlive(): Boolean
+    {
+        return olive
+    }
+
+    fun getJalapeno(): Boolean
+    {
+        return jalapeno
+    }
+
+    fun getAvocado(): Boolean
+    {
+        return avocado
+    }
+
+    fun setLettuce(toChange: Boolean)
     {
         lettuce = toChange
     }
 
-    fun changeTomato(toChange: Boolean)
+    fun setTomato(toChange: Boolean)
     {
         tomato = toChange
     }
 
-    fun changeCucumter(toChange: Boolean)
+    fun setCucumter(toChange: Boolean)
     {
         cucumber = toChange
     }
 
-    fun changePepper(toChange: Boolean)
+    fun setPepper(toChange: Boolean)
     {
         pepper = toChange
     }
 
-    fun changeOnion(toChange: Boolean)
+    fun setOnion(toChange: Boolean)
     {
         onion = toChange
     }
 
-    fun changePickle(toChange: Boolean)
+    fun setPickle(toChange: Boolean)
     {
         pickle = toChange
     }
 
-    fun changeOlive(toChange: Boolean)
+    fun setOlive(toChange: Boolean)
     {
         olive = toChange
     }
 
-    fun changeJalapeno(toChange: Boolean)
+    fun setJalapeno(toChange: Boolean)
     {
         jalapeno = toChange
     }
 
-    fun changeAvocado(toChange: Boolean)
+    fun setAvocado(toChange: Boolean)
     {
-        avacado = toChange
+        avocado = toChange
+    }
+
+    fun changeLettuce()
+    {
+        lettuce = !lettuce
+    }
+
+    fun changeTomato()
+    {
+        tomato = !tomato
+    }
+
+    fun changeCucumter()
+    {
+        cucumber = !cucumber
+    }
+
+    fun changePepper()
+    {
+        pepper = !pepper
+    }
+
+    fun changeOnion()
+    {
+        onion = !onion
+    }
+
+    fun changePickle()
+    {
+        pickle = !pickle
+    }
+
+    fun changeOlive()
+    {
+        olive = !olive
+    }
+
+    fun changeJalapeno()
+    {
+        jalapeno = !jalapeno
+    }
+
+    fun changeAvocado()
+    {
+        avocado = !avocado
     }
 
     fun deepCopy(): Vegetable
     {
-        return Vegetable(lettuce, tomato, cucumber, pepper, onion, pickle, olive, jalapeno, avacado)
+        return Vegetable(lettuce, tomato, cucumber, pepper, onion, pickle, olive, jalapeno, avocado)
     }
 
     override fun toString(): String
@@ -78,7 +168,7 @@ class Vegetable(
             append((if (pickle) "[피클] " else ""))
             append((if (olive) "[올리브] " else ""))
             append((if (jalapeno) "[할라피뇨] " else ""))
-            append((if (avacado) "[아보카도] " else ""))
+            append((if (avocado) "[아보카도] " else ""))
 
             appendLine("\n빠진 채소 목록: ")
             append((if (!lettuce) "[양상추] " else ""))
@@ -89,7 +179,7 @@ class Vegetable(
             append((if (!pickle) "[피클] " else ""))
             append((if (!olive) "[올리브] " else ""))
             append((if (!jalapeno) "[할라피뇨] " else ""))
-            append((if (!avacado) "[아보카도] " else ""))
+            append((if (!avocado) "[아보카도] " else ""))
         }
     }
 

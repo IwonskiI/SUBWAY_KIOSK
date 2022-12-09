@@ -110,15 +110,15 @@ class Sandwich(
     {
         when (vegeName)
         {
-            "양상추"  -> vege.changeLettuce(boolean)
-            "토마토"  -> vege.changeTomato(boolean)
-            "오이"   -> vege.changeCucumter(boolean)
-            "피망"   -> vege.changePepper(boolean)
-            "양파"   -> vege.changeOnion(boolean)
-            "피클"   -> vege.changePickle(boolean)
-            "올리브"  -> vege.changeOlive(boolean)
-            "할라피뇨" -> vege.changeJalapeno(boolean)
-            "아보카도" -> vege.changeAvocado(boolean)
+            "양상추"  -> vege.setLettuce(boolean)
+            "토마토"  -> vege.setTomato(boolean)
+            "오이"   -> vege.setCucumter(boolean)
+            "피망"   -> vege.setPepper(boolean)
+            "양파"   -> vege.setOnion(boolean)
+            "피클"   -> vege.setPickle(boolean)
+            "올리브"  -> vege.setOlive(boolean)
+            "할라피뇨" -> vege.setJalapeno(boolean)
+            "아보카도" -> vege.setAvocado(boolean)
             else   ->
             {
                 println("invalid vegetable name")
@@ -131,15 +131,36 @@ class Sandwich(
     {
         when (vegeID)
         {
-            1    -> vege.changeLettuce(boolean)
-            2    -> vege.changeTomato(boolean)
-            3    -> vege.changeCucumter(boolean)
-            4    -> vege.changePepper(boolean)
-            5    -> vege.changeOnion(boolean)
-            6    -> vege.changePickle(boolean)
-            7    -> vege.changeOlive(boolean)
-            8    -> vege.changeJalapeno(boolean)
-            9    -> vege.changeAvocado(boolean)
+            1    -> vege.setLettuce(boolean)
+            2    -> vege.setTomato(boolean)
+            3    -> vege.setCucumter(boolean)
+            4    -> vege.setPepper(boolean)
+            5    -> vege.setOnion(boolean)
+            6    -> vege.setPickle(boolean)
+            7    -> vege.setOlive(boolean)
+            8    -> vege.setJalapeno(boolean)
+            9    -> vege.setAvocado(boolean)
+            else ->
+            {
+                println("invalid vegetable ID")
+                exitProcess(1)
+            }
+        }
+    }
+
+    fun changeVege(vegeID: Int)
+    {
+        when (vegeID)
+        {
+            1    -> vege.changeLettuce()
+            2    -> vege.changeTomato()
+            3    -> vege.changeCucumter()
+            4    -> vege.changePepper()
+            5    -> vege.changeOnion()
+            6    -> vege.changePickle()
+            7    -> vege.changeOlive()
+            8    -> vege.changeJalapeno()
+            9    -> vege.changeAvocado()
             else ->
             {
                 println("invalid vegetable ID")

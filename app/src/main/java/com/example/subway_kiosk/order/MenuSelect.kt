@@ -126,7 +126,7 @@ class MenuSelect : AppCompatActivity()
         val selectBtn = dialog.findViewById<Button>(R.id.dialog_selectMenu)
         selectBtn?.setOnClickListener {
             dialog.hide()
-            val nextIntent = Intent(this@MenuSelect, tester::class.java)
+            val nextIntent = Intent(this@MenuSelect, BreadCheeseSelect::class.java)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             startActivity(nextIntent)
         }

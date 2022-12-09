@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:textAlignment="center">
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/subway_logo2" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/subway_vegeselect" />
+
+        <TextView
+            android:id="@+id/breadCheeseSelect_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180dp"
+            android:text="야채를 선택해주세요"
+            android:textColor="@color/subway_gr"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/breadCheeseSelect_bread"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/corner_button3_selected"
+        android:gravity="center"
+        android:text="야채 선택"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <GridLayout
+        android:id="@+id/breadCheeseSelect_bread_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="3"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="2">
+
+        <Button
+            android:id="@+id/lettuce"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="양상추"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/tomato"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="토마토"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/cucumber"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="오이"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/pepper"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="피망"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/onion"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="양파"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/pickle"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="피클"
+            android:textSize="12sp" />
+        <Button
+            android:id="@+id/olive"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="올리브"
+            android:textSize="12sp" />
+        <Button
+            android:id="@+id/jalapeno"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="할라피뇨"
+            android:textSize="12sp" />
+        <Button
+            android:id="@+id/avocado"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="아보카도"
+            android:textSize="12sp" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/breadCheeseSelect_toPrev"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corner_button4"
+            android:text="이전"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/breadCheeseSelect_passAll"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corner_button4"
+            android:text="모두 건너뛰기"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/breadCheeseSelect_pass"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corner_button4"
+            android:text="다음"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+
+
+</LinearLayout>
