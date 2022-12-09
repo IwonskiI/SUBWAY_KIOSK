@@ -48,7 +48,6 @@ class MenuSelect : AppCompatActivity()
             {
                 val menuSelectText: String
 
-//                menuListByMeat.getValue(selected.get(0)).forEach { it.showInfo() }
                 for (i: Int in 0 .. min(2, menuListByMeat.getValue(selected.get(0)).size - 1))
                 {
                     selectedMeatButtonList1[i].isVisible = true
@@ -94,8 +93,7 @@ class MenuSelect : AppCompatActivity()
 
         val prevBtn = findViewById<Button>(R.id.menuSelect_toPrev)
         prevBtn.setOnClickListener {
-            val nextIntent = Intent(this, MeatSelect::class.java)
-            startActivity(nextIntent)
+            finish()
         }
     }
 
@@ -106,19 +104,31 @@ class MenuSelect : AppCompatActivity()
 
         dialog.setContentView(R.layout.menu_dialog)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent);
+
         val prevBtn = dialog.findViewById<Button>(R.id.dialog_toPrev)
         prevBtn?.setOnClickListener({ dialog.hide() })
 
-        selectedBtn.text
+        var selectedSandwich = Sandwich.menuList.get(0).deepCopy()
+
         Sandwich.menuList.forEach {
             if (it.getSandwichName().equals(selectedBtn.text))
             {
+                selectedSandwich = it.deepCopy()
+
                 var sandwichNameTextView = dialog.findViewById<TextView>(R.id.dialog_name)
                 sandwichNameTextView?.setText(it.getSandwichName())
 
                 var sandwichImgView = dialog.findViewById<ImageView>(R.id.dialog_img)
                 sandwichImgView?.setImageResource(Sandwich.hashMapIDtoXML.getValue(it.getSandwichID()))
             }
+        }
+
+        val selectBtn = dialog.findViewById<Button>(R.id.dialog_selectMenu)
+        selectBtn?.setOnClickListener {
+            dialog.hide()
+            val nextIntent = Intent(this@MenuSelect, tester::class.java)
+            nextIntent.putExtra("selectedSandwich", selectedSandwich)
+            startActivity(nextIntent)
         }
 
         dialog.show()
