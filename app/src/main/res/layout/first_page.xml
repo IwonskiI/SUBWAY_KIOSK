@@ -24,20 +24,22 @@
                 android:id="@+id/eat_in"
                 android:drawableTop="@drawable/eat_inxml"
                 android:background="@drawable/corner_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="30dp"
-                android:layout_margin="20dp"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="30dp"
                 android:textColor="@color/subway_gr"
                 android:text ="먹고 가요"></Button>
             <Button
                 android:id="@+id/take_out"
                 android:drawableTop="@drawable/take_outxml"
                 android:background="@drawable/corner_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="30dp"
-                android:layout_margin="20dp"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="30dp"
                 android:textColor="@color/subway_gr"
                 android:text ="들고 가요">
             </Button>
