@@ -31,6 +31,18 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".order.tester"
+            android:exported="true" />
+        <activity
+            android:name=".order.BreadCheeseSelect"
+            android:exported="true" />
+        <activity
+            android:name=".order.VegeSelect"
+            android:exported="true" />
+        <activity
+            android:name=".order.SauceSelect"
+            android:exported="true" />
     </application>
 
 </manifest>

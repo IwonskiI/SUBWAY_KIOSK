@@ -23,22 +23,22 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:src="@drawable/subway_menuselect" />
+            android:src="@drawable/subway_breadcheeseselect" />
 
         <TextView
-            android:id="@+id/menuselect_text"
+            android:id="@+id/breadCheeseSelect_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="180dp"
-            android:text=""
+            android:text="빵과 치즈를 선택해주세요"
             android:textColor="@color/subway_gr"
             android:textSize="15sp"
             android:textStyle="normal" />
     </FrameLayout>
 
     <TextView
-        android:id="@+id/menuselect_meat1"
+        android:id="@+id/breadCheeseSelect_bread"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_gravity="center"
@@ -46,60 +46,93 @@
         android:layout_marginVertical="5dp"
         android:background="@drawable/corner_button3_selected"
         android:gravity="center"
-        android:text="고기 1에 대한 메뉴"
+        android:text="빵 선택"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="normal" />
 
     <GridLayout
-        android:id="@+id/menuselect_meat1_grid"
+        android:id="@+id/breadCheeseSelect_bread_grid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_marginHorizontal="15dp"
         android:layout_marginBottom="10dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:columnCount="3"
         android:orientation="horizontal"
         android:rowCount="2">
 
         <Button
-            android:id="@+id/button101"
-            android:layout_height="100dp"
+            android:id="@+id/breadBtn1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
             android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="햄"
+            android:text="화이트"
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/button102"
-            android:layout_height="100dp"
+            android:id="@+id/breadBtn2"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
             android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="햄"
+            android:text="허니오트"
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/button103"
-            android:layout_height="100dp"
+            android:id="@+id/breadBtn3"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
             android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="햄"
+            android:text="위트"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/breadBtn4"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="파마산 오레가노"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/breadBtn5"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="하티"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/breadBtn6"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:onClick="btnClick"
+            android:text="플랫브레드"
             android:textSize="12sp" />
 
     </GridLayout>
 
     <TextView
-        android:id="@+id/menuselect_meat2"
+        android:id="@+id/breadCheeseSelect_cheese"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_gravity="center"
@@ -107,13 +140,13 @@
         android:layout_marginVertical="5dp"
         android:background="@drawable/corner_button3_selected"
         android:gravity="center"
-        android:text="고기 2에 대한 메뉴"
+        android:text="치즈 선택"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="normal" />
 
     <GridLayout
-        android:id="@+id/menuselect_meat2_grid"
+        android:id="@+id/breadCheeseSelect_cheese_grid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
@@ -125,53 +158,90 @@
         android:rowCount="1">
 
         <Button
-            android:id="@+id/button201"
-            android:layout_height="100dp"
+            android:id="@+id/cheeseBtn1"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
             android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="햄"
+            android:text="아메리칸 치즈"
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/button202"
-            android:layout_height="100dp"
+            android:id="@+id/cheeseBtn2"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
             android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="햄"
+            android:text="모짜렐라 치즈"
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/button203"
-            android:layout_height="100dp"
+            android:id="@+id/cheeseBtn3"
+            android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
             android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="햄"
+            android:text="슈레드 치즈"
             android:textSize="12sp" />
 
     </GridLayout>
 
-    <Button
-        android:id="@+id/menuSelect_toPrev"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/corner_button4"
-        android:text="이전"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="normal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/breadCheeseSelect_toPrev"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corner_button4"
+            android:text="이전"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/breadCheeseSelect_passAll"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corner_button4"
+            android:text="모두 건너뛰기"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/breadCheeseSelect_pass"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corner_button4"
+            android:text="다음"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
 
 
 </LinearLayout>
