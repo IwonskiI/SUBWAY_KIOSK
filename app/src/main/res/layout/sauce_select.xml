@@ -23,7 +23,7 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:src="@drawable/subway_vegeselect" />
+            android:src="@drawable/subway_sauceselect" />
 
         <TextView
             android:id="@+id/breadCheeseSelect_text"
@@ -31,136 +31,197 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="180dp"
-            android:text="야채를 선택해주세요"
+            android:text="소스를 선택해주세요"
             android:textColor="@color/subway_gr"
             android:textSize="15sp"
             android:textStyle="normal" />
 
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/breadCheeseSelect_bread"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="5dp"
-        android:background="@drawable/corner_button3_selected"
-        android:gravity="center"
-        android:text="야채 선택"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="normal" />
-
     <GridLayout
-        android:id="@+id/breadCheeseSelect_bread_grid"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="15dp"
         android:layout_marginBottom="10dp"
-        android:layout_weight="3"
-        android:columnCount="3"
-        android:orientation="horizontal"
-        android:rowCount="2">
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/lettuce"
+            android:id="@+id/sweetOnion"
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
             android:drawableTop="@drawable/meat_select_ham_xml"
             android:onClick="btnClick"
-            android:text="양상추"
-            android:textSize="12sp" />
+            android:text="스위트 어니언"
+            android:textSize="11sp" />
 
         <Button
-            android:id="@+id/tomato"
+            android:id="@+id/honeyMustard"
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/meat_select_bacon_xml"
             android:onClick="btnClick"
-            android:text="토마토"
-            android:textSize="12sp" />
+            android:text="허니 머스타드"
+            android:textSize="11sp" />
 
         <Button
-            android:id="@+id/cucumber"
+            android:id="@+id/sweetChili"
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/meat_select_pepperoni_xml"
             android:onClick="btnClick"
-            android:text="오이"
-            android:textSize="12sp" />
+            android:text="스위트 칠리"
+            android:textSize="11sp" />
 
         <Button
-            android:id="@+id/pimento"
+            android:id="@+id/smokeBBQ"
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/meat_select_salami_xml"
             android:onClick="btnClick"
-            android:text="피망"
-            android:textSize="12sp" />
+            android:text="스모크 바비큐"
+            android:textSize="11sp" />
 
         <Button
-            android:id="@+id/onion"
+            android:id="@+id/hotChilli"
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/meat_select_rotisserie_chicken_xml"
             android:onClick="btnClick"
-            android:text="양파"
-            android:textSize="12sp" />
+            android:text="핫 칠리"
+            android:textSize="11sp" />
 
         <Button
-            android:id="@+id/pickle"
+            android:id="@+id/chipotle"
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/meat_select_chicken_breast_ham_xml"
             android:onClick="btnClick"
-            android:text="피클"
-            android:textSize="12sp" />
-        <Button
-            android:id="@+id/olive"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
-            android:onClick="btnClick"
-            android:text="올리브"
-            android:textSize="12sp" />
-        <Button
-            android:id="@+id/jalapeno"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
-            android:onClick="btnClick"
-            android:text="할라피뇨"
-            android:textSize="12sp" />
-        <Button
-            android:id="@+id/avocado"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="5dp"
-            android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
-            android:onClick="btnClick"
-            android:text="아보카도"
-            android:textSize="12sp" />
+            android:text="치폴레"
+            android:textSize="11sp" />
 
+        <Button
+            android:id="@+id/mustard"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_pulled_pork_bbq_xml"
+            android:onClick="btnClick"
+            android:text="머스타드"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/horseradish"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_spicy_bbq_xml"
+            android:onClick="btnClick"
+            android:text="홀스래디쉬"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/italianDressing"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_chicken_breast_xml"
+            android:onClick="btnClick"
+            android:text="이탈리안 드레싱"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/redWine"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_steak_xml"
+            android:onClick="btnClick"
+            android:text="레드와인 식초"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/ranch"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_chicken_teriyaki_xml"
+            android:onClick="btnClick"
+            android:text="랜치"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/mayonnaise"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_shrimp_xml"
+            android:onClick="btnClick"
+            android:text="마요네즈"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/oliveOil"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_egg_mayo_xml"
+            android:onClick="btnClick"
+            android:text="올리브 오일"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/salt"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_tuna_xml"
+            android:onClick="btnClick"
+            android:text="소금"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/pepper"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_avocado_xml"
+            android:onClick="btnClick"
+            android:text="후추"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/noSauce"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/meat_select_vege_xml"
+            android:onClick="btnClick"
+            android:text="소스 없음"
+            android:textSize="11sp" />
     </GridLayout>
 
     <LinearLayout

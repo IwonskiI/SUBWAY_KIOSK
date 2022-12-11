@@ -40,6 +40,9 @@
         <activity
             android:name=".order.VegeSelect"
             android:exported="true" />
+        <activity
+            android:name=".order.SauceSelect"
+            android:exported="true" />
     </application>
 
 </manifest>
