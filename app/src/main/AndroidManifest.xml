@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Subway_kiosk"
         tools:targetApi="31">
         <activity
-            android:name=".manage.manageStockBread"
+            android:name=".manager.ManagerStockBread"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
 
         </activity>
         <activity
-            android:name=".manage.manageStockMeat"
+            android:name=".manager.ManagerStockMeat"
             android:exported="true">
         </activity>
 
@@ -62,9 +62,6 @@
             android:exported="true" />
         <activity
             android:name=".manager.ManagerSell"
-            android:exported="true" />
-        <activity
-            android:name=".manager.ManagerStock"
             android:exported="true" />
 
     </application>

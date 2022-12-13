@@ -1,4 +1,4 @@
-package com.example.subway_kiosk.manage
+package com.example.subway_kiosk.manager
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,7 +13,7 @@ import com.example.subway_kiosk.order.VegeSelect
 import com.example.subway_kiosk.util.Sandwich
 import kotlin.system.exitProcess
 
-class manageStockMeat : AppCompatActivity()
+class ManagerStockMeat : AppCompatActivity()
 {
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -22,7 +22,7 @@ class manageStockMeat : AppCompatActivity()
 
         val meatBtn = findViewById<Button>(R.id.manage_bread)
         meatBtn.setOnClickListener {
-            val nextIntent = Intent(this@manageStockMeat, manageStockBread::class.java)
+            val nextIntent = Intent(this@ManagerStockMeat, ManagerStockBread::class.java)
             startActivity(nextIntent)
         }
     }

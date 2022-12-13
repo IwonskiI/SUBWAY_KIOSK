@@ -1,4 +1,4 @@
-package com.example.subway_kiosk.manage
+package com.example.subway_kiosk.manager
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,8 +15,9 @@ import com.example.subway_kiosk.util.Sandwich
 import kotlinx.coroutines.selects.select
 import kotlin.system.exitProcess
 import com.example.subway_kiosk.databinding.ManagerStockBreadBinding
+import com.example.subway_kiosk.manager.ManagerStockMeat
 
-class manageStockBread : AppCompatActivity()
+class ManagerStockBread : AppCompatActivity()
 {
     //get firebase
     var white_num: Int = 3;
@@ -48,7 +49,7 @@ class manageStockBread : AppCompatActivity()
 
 
         binding.manageMeat.setOnClickListener{
-            val nextIntent = Intent(this@manageStockBread, manageStockMeat::class.java)
+            val nextIntent = Intent(this@ManagerStockBread, ManagerStockMeat::class.java)
             startActivity(nextIntent)
         }
 
