@@ -29,7 +29,7 @@
             android:id="@+id/manage_meat"
             android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/corner_button2_selected"
+            android:background="@drawable/corner_button2"
             android:text="고기/단백질"
             android:layout_margin="5dp"
             >
@@ -56,7 +56,7 @@
             android:id="@+id/manage_sauce"
             android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/corner_button2"
+            android:background="@drawable/corner_button2_selected"
             android:text="소스"
             android:layout_margin="5dp"
             >
@@ -85,7 +85,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_ham_xml"
                     android:onClick="btnClick"
-                    android:text="햄"
+                    android:text="스위트 어니언"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -94,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/ham_minus"
+                        android:id="@+id/sweet_onion_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -102,7 +102,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/ham_stock"
+                        android:id="@+id/sweet_onion_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/ham_plus"
+                        android:id="@+id/sweet_onion_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -131,7 +131,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_bacon_xml"
                     android:onClick="btnClick"
-                    android:text="베이컨"
+                    android:text="허니 머스타드"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -140,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/bacon_minus"
+                        android:id="@+id/honey_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -148,7 +148,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/bacon_stock"
+                        android:id="@+id/honey_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/bacon_plus"
+                        android:id="@+id/honey_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -177,7 +177,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_pepperoni_xml"
                     android:onClick="btnClick"
-                    android:text="페퍼로니"
+                    android:text="스위트 칠리"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -186,7 +186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/pepperoni_minus"
+                        android:id="@+id/sweet_chili_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -194,7 +194,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/pepperoni_stock"
+                        android:id="@+id/sweet_chili_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -203,7 +203,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/pepperoni_plus"
+                        android:id="@+id/sweet_chili_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -223,7 +223,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_salami_xml"
                     android:onClick="btnClick"
-                    android:text="살라미"
+                    android:text="스모크 바비큐"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -232,7 +232,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/salami_minus"
+                        android:id="@+id/smoke_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -240,7 +240,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/salami_stock"
+                        android:id="@+id/smoke_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -249,7 +249,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/salami_plus"
+                        android:id="@+id/smoke_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -269,7 +269,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_rotisserie_chicken_xml"
                     android:onClick="btnClick"
-                    android:text="로티세리"
+                    android:text="핫 칠리"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -278,7 +278,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/rotisserie_minus"
+                        android:id="@+id/hot_chili_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -286,7 +286,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/rotisserie_stock"
+                        android:id="@+id/hot_chili_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -295,7 +295,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/rotisserie_plus"
+                        android:id="@+id/hot_chili_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -315,7 +315,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_chicken_breast_ham_xml"
                     android:onClick="btnClick"
-                    android:text="닭가슴살 햄"
+                    android:text="치폴레"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -324,7 +324,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/chicken_breast_ham_minus"
+                        android:id="@+id/chipotle_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -332,7 +332,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/chicken_breast_ham_stock"
+                        android:id="@+id/chipotle_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -341,7 +341,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/chicken_breast_ham_plus"
+                        android:id="@+id/chipotle_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -361,7 +361,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_pulled_pork_bbq_xml"
                     android:onClick="btnClick"
-                    android:text="폴드포크"
+                    android:text="머스타드"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -370,7 +370,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/pulled_pork_minus"
+                        android:id="@+id/mustard_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -378,7 +378,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/pulled_pork_stock"
+                        android:id="@+id/mustard_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -387,7 +387,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/pulled_pork_plus"
+                        android:id="@+id/mustard_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -407,7 +407,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_spicy_bbq_xml"
                     android:onClick="btnClick"
-                    android:text="스파이시 BBQ"
+                    android:text="홀스레디쉬"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -416,7 +416,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/spicy_bbq_minus"
+                        android:id="@+id/horseradish_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -424,7 +424,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/spicy_bbq_stock"
+                        android:id="@+id/horseradish_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -433,7 +433,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/spicy_bbq_plus"
+                        android:id="@+id/horseradish_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -453,7 +453,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_chicken_breast_xml"
                     android:onClick="btnClick"
-                    android:text="닭가슴살"
+                    android:text="이탈리안 드레싱"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -462,7 +462,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/chicken_breast_minus"
+                        android:id="@+id/italianDressing_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -470,7 +470,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/chicken_breast_stock"
+                        android:id="@+id/italianDressing_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -479,7 +479,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/chicken_breast_plus"
+                        android:id="@+id/italianDressing_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -499,7 +499,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_steak_xml"
                     android:onClick="btnClick"
-                    android:text="스테이크"
+                    android:text="레드와인 식초"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -508,7 +508,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/steak_minus"
+                        android:id="@+id/redWine_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -516,7 +516,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/steak_stock"
+                        android:id="@+id/redWine_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -525,7 +525,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/steak_plus"
+                        android:id="@+id/redWine_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -545,7 +545,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_chicken_teriyaki_xml"
                     android:onClick="btnClick"
-                    android:text="데리야끼 치킨"
+                    android:text="렌치"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -554,7 +554,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/chicken_teriyaki_minus"
+                        android:id="@+id/ranch_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -562,7 +562,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/chicken_teriyaki_stock"
+                        android:id="@+id/ranch_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -571,7 +571,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/chicken_teriyaki_plus"
+                        android:id="@+id/ranch_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -591,7 +591,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_shrimp_xml"
                     android:onClick="btnClick"
-                    android:text="새우"
+                    android:text="마요네즈"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -600,7 +600,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/shrimp_minus"
+                        android:id="@+id/mayonnaise_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -608,7 +608,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/shrimp_stock"
+                        android:id="@+id/mayonnaise_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -617,7 +617,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/shrimp_plus"
+                        android:id="@+id/mayonnaise_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -637,7 +637,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_egg_mayo_xml"
                     android:onClick="btnClick"
-                    android:text="에그 마요"
+                    android:text="올리브 오일"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -646,7 +646,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/egg_mayo_minus"
+                        android:id="@+id/olive_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -654,7 +654,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/egg_mayo_stock"
+                        android:id="@+id/olive_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -663,7 +663,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/egg_mayo_plus"
+                        android:id="@+id/olive_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -683,7 +683,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_tuna_xml"
                     android:onClick="btnClick"
-                    android:text="참치"
+                    android:text="소금"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -692,7 +692,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/tuna_minus"
+                        android:id="@+id/salt_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -700,7 +700,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/tuna_stock"
+                        android:id="@+id/salt_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -709,7 +709,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/tuna_plus"
+                        android:id="@+id/salt_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -729,7 +729,7 @@
                     android:layout_margin="5dp"
                     android:drawableTop="@drawable/meat_select_avocado_xml"
                     android:onClick="btnClick"
-                    android:text="아보카도"
+                    android:text="후추"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="12sp">
@@ -738,7 +738,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
-                        android:id="@+id/avocado_minus"
+                        android:id="@+id/pepper_minus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
@@ -746,7 +746,7 @@
                         android:text="-">
                     </Button>
                     <TextView
-                        android:id="@+id/avocado_stock"
+                        android:id="@+id/pepper_stock"
                         android:layout_width="30dp"
                         android:textAlignment="center"
                         android:layout_height="wrap_content"
@@ -755,7 +755,7 @@
                         android:text="0개">
                     </TextView>
                     <Button
-                        android:id="@+id/avocado_plus"
+                        android:id="@+id/pepper_plus"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/corner_button2"
