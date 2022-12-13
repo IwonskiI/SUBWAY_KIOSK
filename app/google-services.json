@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "525837856648",
+    "firebase_url": "https://subway-kiosk-default-rtdb.firebaseio.com",
+    "project_id": "subway-kiosk",
+    "storage_bucket": "subway-kiosk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525837856648:android:3b9178aff0e37891fe543d",
+        "android_client_info": {
+          "package_name": "com.example.subway_kiosk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525837856648-ftpb7qbcp009dnlgpdtovr75onrjvdcg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArNPfht3uGMJpO3DmwmY9SLJYTRJlak-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525837856648-ftpb7qbcp009dnlgpdtovr75onrjvdcg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
