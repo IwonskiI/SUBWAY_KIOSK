@@ -13,13 +13,24 @@
         android:theme="@style/Theme.Subway_kiosk"
         tools:targetApi="31">
         <activity
-            android:name=".order.MeatSelect"
+            android:name=".manage.manageStockBread"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".manage.manageStockMeat"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".order.MeatSelect"
+            android:exported="true">
+
 
             <meta-data
                 android:name="android.app.lib_name"
