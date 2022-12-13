@@ -406,58 +406,58 @@ class Sandwich(
         {
             val menuList = hashMapOf<Int, ArrayList<Sandwich>>(
                 v.findViewById<Button>(R.id.meatSelect_ham).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(1).deepCopy(),
-                    Sandwich.menuList.get(2).deepCopy(),
-                    Sandwich.menuList.get(3).deepCopy()
+                    menuList.get(1).deepCopy(),
+                    menuList.get(2).deepCopy(),
+                    menuList.get(3).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_bacon).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(2).deepCopy(),
-                    Sandwich.menuList.get(4).deepCopy(),
-                    Sandwich.menuList.get(5).deepCopy()
+                    menuList.get(2).deepCopy(),
+                    menuList.get(4).deepCopy(),
+                    menuList.get(5).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_pepperoni).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(1).deepCopy(), Sandwich.menuList.get(6).deepCopy()
+                    menuList.get(1).deepCopy(), menuList.get(6).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_salami).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(1).deepCopy(), Sandwich.menuList.get(6).deepCopy()
+                    menuList.get(1).deepCopy(), menuList.get(6).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_rotisserie_chicken).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(7).deepCopy()
+                    menuList.get(7).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_chicken_breast_ham).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(2).deepCopy(),
-                    Sandwich.menuList.get(4).deepCopy(),
-                    Sandwich.menuList.get(8).deepCopy()
+                    menuList.get(2).deepCopy(),
+                    menuList.get(4).deepCopy(),
+                    menuList.get(8).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_pulled_pork_bbq).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(9).deepCopy(), Sandwich.menuList.get(10).deepCopy()
+                    menuList.get(9).deepCopy(), menuList.get(10).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_spicy_bbq).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(11).deepCopy()
+                    menuList.get(11).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_chicken_breast).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(12).deepCopy()
+                    menuList.get(12).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_steak).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(13).deepCopy()
+                    menuList.get(13).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_chicken_teriyaki).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(14).deepCopy()
+                    menuList.get(14).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_shrimp).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(15).deepCopy()
+                    menuList.get(15).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_egg_mayo).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(16).deepCopy()
+                    menuList.get(16).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_tuna).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(17).deepCopy()
+                    menuList.get(17).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_avocado).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(7).deepCopy()
+                    menuList.get(7).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_vege).id to arrayListOf<Sandwich>(
-                    Sandwich.menuList.get(18).deepCopy()
+                    menuList.get(18).deepCopy()
                 )
             )
             return menuList

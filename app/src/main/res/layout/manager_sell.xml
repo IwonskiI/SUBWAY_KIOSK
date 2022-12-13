@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="금일 매출"
+            android:textStyle="bold"
             android:textSize="20dp"></TextView>
         <TextView
             android:layout_width="wrap_content"
@@ -42,12 +43,14 @@
             android:background="@drawable/corner_button2"
             android:text="세트 메뉴 : 150,000원"
             android:layout_margin="5dp"
+            android:textStyle="bold"
             ></Button>
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@drawable/corner_button2"
             android:text="단품 버거 : 80,000원"
+            android:textStyle="bold"
             android:layout_margin="5dp"
             >
         </Button>
@@ -56,6 +59,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/corner_button2"
             android:text="사이드 메뉴 : 30,000원"
+            android:textStyle="bold"
             android:layout_margin="5dp"
             >
         </Button>
@@ -66,6 +70,7 @@
             android:layout_marginRight="30dp"
             android:layout_gravity="right"
             android:text="일간 총 매출 : 260,000원"
+            android:textStyle="bold"
             android:textSize="20dp"></TextView>
     </LinearLayout>
     <LinearLayout
@@ -78,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="월간 매출"
+            android:textStyle="bold"
             android:textSize="20dp"></TextView>
         <TextView
             android:layout_width="wrap_content"
@@ -90,6 +96,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/corner_button2"
             android:text="세트 메뉴 : 3,000,000원"
+            android:textStyle="bold"
             android:layout_margin="5dp"
             ></Button>
         <Button
@@ -97,6 +104,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/corner_button2"
             android:text="단품 버거 : 2,000,000원"
+            android:textStyle="bold"
             android:layout_margin="5dp"
             >
         </Button>
@@ -105,17 +113,21 @@
             android:layout_height="wrap_content"
             android:background="@drawable/corner_button2"
             android:text="사이드 메뉴 : 300,000원"
+            android:textStyle="bold"
             android:layout_margin="5dp"
             >
         </Button>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_gravity="right"
-            android:text="월간 총 매출 : 5,300,000원"
-            android:textSize="20dp"></TextView>
+
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:text="월간 총 매출 : 5,300,000원"
+        android:textStyle="bold"
+        android:textSize="20dp"></TextView>
 
 </LinearLayout>

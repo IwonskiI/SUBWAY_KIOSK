@@ -43,6 +43,19 @@
         <activity
             android:name=".order.SauceSelect"
             android:exported="true" />
+        <activity
+            android:name=".ManagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".manager.ManagerEditMenu"
+            android:exported="true" />
+        <activity
+            android:name=".manager.ManagerSell"
+            android:exported="true" />
+        <activity
+            android:name=".manager.ManagerStock"
+            android:exported="true" />
+
     </application>
 
 </manifest>
