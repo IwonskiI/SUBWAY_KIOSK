@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:drawable="@drawable/vege_olive"
-        android:width="70dp"
+        android:drawable="@drawable/sauce_none"
+        android:width="56dp"
         android:height="56dp">
     </item>
+
+
 </layer-list>

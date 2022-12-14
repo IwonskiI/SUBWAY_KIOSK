@@ -71,7 +71,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_lettuce_xml"
             android:onClick="btnClick"
             android:text="양상추"
             android:textSize="12sp" />
@@ -82,7 +82,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_tomato_xml"
             android:onClick="btnClick"
             android:text="토마토"
             android:textSize="12sp" />
@@ -93,7 +93,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_cucumber_xml"
             android:onClick="btnClick"
             android:text="오이"
             android:textSize="12sp" />
@@ -104,7 +104,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_pimento_xml"
             android:onClick="btnClick"
             android:text="피망"
             android:textSize="12sp" />
@@ -115,7 +115,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_onion_xml"
             android:onClick="btnClick"
             android:text="양파"
             android:textSize="12sp" />
@@ -126,7 +126,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_pickle_xml"
             android:onClick="btnClick"
             android:text="피클"
             android:textSize="12sp" />
@@ -136,7 +136,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_olive_xml"
             android:onClick="btnClick"
             android:text="올리브"
             android:textSize="12sp" />
@@ -146,7 +146,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_jalapenos_xml"
             android:onClick="btnClick"
             android:text="할라피뇨"
             android:textSize="12sp" />
@@ -156,7 +156,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:background="@drawable/corner_button3"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/vege_avocado_xml"
             android:onClick="btnClick"
             android:text="아보카도"
             android:textSize="12sp" />
