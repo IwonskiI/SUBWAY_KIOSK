@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.subway_kiosk.ManagerActivity
 import com.example.subway_kiosk.databinding.ManagerStockSauceBinding
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.DataSnapshot
@@ -63,6 +64,11 @@ class ManagerStockSauce : AppCompatActivity()
                 print(error.message)
             }
         } )
+
+        binding.home.setOnClickListener{
+            val nextIntent = Intent(this@ManagerStockSauce, ManagerActivity::class.java)
+            startActivity(nextIntent)
+        }
         binding.manageMeat.setOnClickListener{
             val nextIntent = Intent(this@ManagerStockSauce, ManagerStockMeat::class.java)
             startActivity(nextIntent)
