@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.subway_kiosk.ManagerActivity
 import com.example.subway_kiosk.databinding.ManagerStockBreadBinding
 import com.example.subway_kiosk.databinding.ManagerStockMeatBinding
 import com.example.subway_kiosk.databinding.ManagerStockVegeBinding
@@ -58,6 +59,11 @@ class ManagerStockVege : AppCompatActivity()
                 print(error.message)
             }
         } )
+
+        binding.home.setOnClickListener{
+            val nextIntent = Intent(this@ManagerStockVege, ManagerActivity::class.java)
+            startActivity(nextIntent)
+        }
 
         binding.manageMeat.setOnClickListener{
             val nextIntent = Intent(this@ManagerStockVege, ManagerStockMeat::class.java)

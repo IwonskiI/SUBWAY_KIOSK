@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.subway_kiosk.ManagerActivity
 import com.example.subway_kiosk.databinding.ManagerStockBreadBinding
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.DataSnapshot
@@ -86,6 +87,10 @@ class ManagerStockBread : AppCompatActivity()
                 print(error.message)
             }
         } )
+        binding.home.setOnClickListener{
+            val nextIntent = Intent(this@ManagerStockBread, ManagerActivity::class.java)
+            startActivity(nextIntent)
+        }
 
         binding.manageMeat.setOnClickListener{
             val nextIntent = Intent(this@ManagerStockBread, ManagerStockMeat::class.java)
