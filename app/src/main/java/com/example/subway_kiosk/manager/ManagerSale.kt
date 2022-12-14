@@ -2,6 +2,7 @@ package com.example.subway_kiosk.manager
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class ManagerSale : AppCompatActivity() {
     private lateinit var binding: ManagerSaleBinding
@@ -23,29 +25,66 @@ class ManagerSale : AppCompatActivity() {
         binding = ManagerSaleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         // DB connection
         database = Firebase.database.reference
 
-        var todaySet: String = "30,000"
-        var todaySingle: String = "30,000"
-        var todaySide: String = "30,000"
+        // DB data parsing
+        var todaySetPrice: Int
+        var todaySinglePrice: Int
 
-        var monthSet: String = "30,000"
-        var monthSingle: String = "30,000"
-        var monthSide: String = "30,000"
+        var monthSetPrice: Int
+        var monthSinglePrice: Int
 
-        var todayTotal: String = "30,000"
-        var monthTotal: String = "30,000"
+        var todayTotalPrice: Int
+        var monthTotalPrice: Int
 
-        binding.todaySetBtn.setText("세트 메뉴: " + todaySet + "원")
-        binding.todaySingleBtn.setText("단품 메뉴: " + todaySingle + "원")
+        // 금일, 월간 필터링
+        lateinit var todaySetList: ArrayList<Sale>
+        lateinit var todaySingleList: ArrayList<Sale>
+        lateinit var monthSetList: ArrayList<Sale>
+        lateinit var monthSingleList: ArrayList<Sale>
 
-        binding.monthSetBtn.setText("세트 메뉴: " + monthSet + "원")
-        binding.monthSingleBtn.setText("단품 메뉴: " + monthSingle + "원")
 
-        binding.todayTotalTv.setText("일간 총 매출: " + todayTotal + "원")
-        binding.monthTotalTv.setText("월간 총 매출: " + monthTotal + "원")
+        // all data -> type에 따라 분류, 날짜에 따라 분류
+        var saleList = arrayListOf<Sale>()
+
+        // db 에서 가져오기
+        database.child("sale_status").get().addOnSuccessListener {
+            for (item in it.children) {
+                val maps = item.value as HashMap<String, Any>
+                val sale = Sale(maps.get("menu").toString(), maps.get("price").toString().toInt(), LocalDate.parse(maps.get("date").toString(), DateTimeFormatter.ISO_DATE),maps.get("type").toString())
+                saleList.add(sale)
+            }
+
+            todaySetList = saleList.filter { it.date == LocalDate.now() && it.type.equals("SET", false)  } as ArrayList<Sale>
+            todaySingleList = saleList.filter { it.date == LocalDate.now() && it.type.equals("SINGLE", false)  } as ArrayList<Sale>
+            monthSetList = saleList.filter { it.date.month ==LocalDate.now().month && it.type.equals("SET", false) } as ArrayList<Sale>
+            monthSingleList = saleList.filter { it.date.month ==LocalDate.now().month && it.type.equals("SINGLE", false) } as ArrayList<Sale>
+
+            todaySetPrice = 0
+            todaySetList.forEach{ todaySetPrice += it.price}
+
+            todaySinglePrice = 0
+            todaySingleList.forEach{ todaySinglePrice += it.price}
+
+            monthSetPrice = 0
+            monthSetList.forEach{ monthSetPrice += it.price}
+
+            monthSinglePrice = 0
+            monthSingleList.forEach{ monthSinglePrice += it.price}
+
+            binding.todaySetBtn.setText("세트 메뉴: " + todaySetPrice.toString() + "원")
+            binding.todaySingleBtn.setText("단품 메뉴: " + todaySinglePrice.toString() + "원")
+
+            binding.monthSetBtn.setText("세트 메뉴: " + monthSetPrice.toString() + "원")
+            binding.monthSingleBtn.setText("단품 메뉴: " + monthSinglePrice.toString() + "원")
+
+            binding.todayTotalTv.setText("일간 총 매출: " + (todaySetPrice + todaySinglePrice).toString() + "원")
+            binding.monthTotalTv.setText("월간 총 매출: " + (monthSetPrice + monthSinglePrice).toString() + "원")
+
+        }.addOnFailureListener {
+            Log.e("firebase", "Error getting data", it)
+        }
 
 
         // event
@@ -54,20 +93,8 @@ class ManagerSale : AppCompatActivity() {
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
-                var OrderList = arrayListOf<Sale>(
-                    Sale("이름", 5000, LocalDate.now()),
-                    Sale("맛있따", 5000, LocalDate.now()),
-                    Sale("이름", 5000, LocalDate.now()),
-                    Sale("이름", 5000, LocalDate.now()),
-                    Sale("야미야미", 5000, LocalDate.now()),
-                    Sale("이름", 5000, LocalDate.now()),
-                    Sale("이름", 5000, LocalDate.now()),
-                    Sale("헤헤", 5000, LocalDate.now()),
-                    Sale("이름", 5000, LocalDate.now()),
-                    Sale("이름", 5000, LocalDate.now()),
-                )
 
-                val Adapter = SaleAdapter(this.context, OrderList)
+                val Adapter = SaleAdapter(this.context, todaySetList)
                 dialogBinding.listView.adapter = Adapter
 
                 show()
@@ -78,6 +105,10 @@ class ManagerSale : AppCompatActivity() {
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
+
+                val Adapter = SaleAdapter(this.context, todaySingleList)
+                dialogBinding.listView.adapter = Adapter
+
                 show()
             }
         }
@@ -87,6 +118,10 @@ class ManagerSale : AppCompatActivity() {
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
+
+                val Adapter = SaleAdapter(this.context, monthSetList)
+                dialogBinding.listView.adapter = Adapter
+
                 show()
             }
         }
@@ -96,10 +131,14 @@ class ManagerSale : AppCompatActivity() {
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
+
+                val Adapter = SaleAdapter(this.context, monthSingleList)
+                dialogBinding.listView.adapter = Adapter
+
                 show()
             }
         }
-
-
     }
+
+
 }
