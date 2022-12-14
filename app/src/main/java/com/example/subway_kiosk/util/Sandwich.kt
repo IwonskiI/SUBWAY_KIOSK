@@ -14,17 +14,23 @@ class Sandwich(
     private var breadID: Int,
     private var cheeseID: Int,
     private var vege: Vegetable,
-    private var sauceID: ArrayList<Int>
+    private var sauceID: ArrayList<Int>,
+    private var setSel: Boolean,
+    private var cookieID: Int
 ) : Parcelable
 {
     private lateinit var breadName: String
     private lateinit var cheeseName: String
     private var sauceNameSet = HashMap<Int, String>()
+    private lateinit var cookieName: String
+    private lateinit var setName: String
 
     init
     {
         setBreadName()
         setCheeseName()
+        setCookieName()
+        setSetName()
 
         // 10X: 달콤, 20X: 매콤, 30X: 새콤, 40X: 고소, 50X: 기타
         sauceNameSet.put(101, "스위트 어니언")
@@ -87,6 +93,21 @@ class Sandwich(
     fun getSauceName(sauceID: Int): String
     {
         return sauceNameSet.getValue(sauceID)
+    }
+
+    fun getSetBool(): Boolean
+    {
+        return setSel
+    }
+
+    fun getCookieID(): Int
+    {
+        return cookieID
+    }
+
+    fun getCookieName(): String
+    {
+        return cookieName
     }
 
     fun setBreadID(newID: Int)
@@ -179,6 +200,17 @@ class Sandwich(
         return sauceID.remove(curSauceID)
     }
 
+    fun setSet(setCheck: Boolean)
+    {
+        setSel = setCheck
+    }
+
+    fun setCookieID(newID: Int)
+    {
+        cookieID = newID
+        setCookieName()
+    }
+
     private fun setBreadName()
     {
         when (breadID)
@@ -212,13 +244,40 @@ class Sandwich(
         }
     }
 
+    private fun setSetName()
+    {
+        when (setSel)
+        {
+            true  -> setName = "세트(쿠키+음료)"
+            false -> setName = "단품(선택 없음)"
+        }
+    }
+
+    private fun setCookieName()
+    {
+        when (cookieID)
+        {
+            0    -> cookieName = "선택 안함"
+            1    -> cookieName = "더블 초코칩"
+            2    -> cookieName = "초코칩"
+            3    -> cookieName = "오트밀"
+            4    -> cookieName = "라즈베리"
+            5    -> cookieName = "마카다미아"
+            else ->
+            {
+                println("invalid cookie ID")
+                exitProcess(1)
+            }
+        }
+    }
+
     fun deepCopy(): Sandwich
     {
         var sauceCopy = ArrayList<Int>()
         sauceCopy.addAll(sauceID)
 
         return Sandwich(
-            sandwichID, sandwichName, breadID, cheeseID, vege.deepCopy(), sauceCopy
+            sandwichID, sandwichName, breadID, cheeseID, vege.deepCopy(), sauceCopy, setSel, cookieID
         )
     }
 
@@ -234,6 +293,11 @@ class Sandwich(
             appendLine(vege.toString())
             append("sauce(ArrayList): ")
             sauceID.forEach { append("[" + sauceNameSet.getValue(it) + "] ") }
+            appendLine()
+            appendLine("setSelected: " + setSel)
+            appendLine("setCheck: " + setName)
+            appendLine("CookieId: " + cookieID)
+            appendLine("CookieName: " + cookieName)
         }
     }
 
@@ -272,133 +336,171 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(false, false, false, false, false, false, false, false, false),
-                arrayListOf<Int>()
+                arrayListOf<Int>(),
+                false,
+                0
             ), Sandwich(
                 1,
                 "이탈리안 비엠티",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 2,
                 "써브웨이 클럽",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 3,
                 "햄",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 4,
                 "치킨 베이컨 아보카도",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 5,
                 "비엘티",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 6,
                 "스파이시 이탈리안",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 7,
                 "로티세리 바비큐 치킨",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 8,
                 "치킨 슬라이스",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 9,
                 "풀드 포크 바비큐",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 10,
                 "K-바비큐",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 11,
                 "스파이시 바비큐",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 12,
                 "로스트 치킨",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 13,
                 "스테이크 & 치즈",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 14,
                 "치킨 데리야끼",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 15,
                 "쉬림프",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 16,
                 "에그마요",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 17,
                 "참치",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             ), Sandwich(
                 18,
                 "베지",
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101)
+                arrayListOf<Int>(301, 101),
+                false,
+                0
             )
         )
 
@@ -454,7 +556,7 @@ class Sandwich(
                     menuList.get(17).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_avocado).id to arrayListOf<Sandwich>(
-                    menuList.get(7).deepCopy()
+                    menuList.get(4).deepCopy()
                 ),
                 v.findViewById<Button>(R.id.meatSelect_vege).id to arrayListOf<Sandwich>(
                     menuList.get(18).deepCopy()

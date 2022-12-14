@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:textAlignment="center">
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/subway_logo2" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/subway_setselect" />
+
+        <TextView
+            android:id="@+id/set_select_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180dp"
+            android:text="세트 여부를 선택해주세요. "
+            android:textColor="@color/subway_gr"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/set_select"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/corner_button3_selected"
+        android:gravity="center"
+        android:text="세트 여부 선택"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <GridLayout
+        android:id="@+id/set_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:rowCount="1">
+
+        <Button
+            android:id="@+id/setBtn1"
+            android:layout_height="85dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/single_image_xml"
+            android:paddingTop="5dp"
+            android:onClick="btnClick"
+            android:text="선택 안 함 (단품)"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/setBtn2"
+            android:layout_height="85dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/set_image_xml"
+            android:paddingTop="5dp"
+            android:onClick="btnClick"
+            android:text="쿠키 + 음료 (세트)"
+            android:textSize="12sp" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/cookie_select"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/corner_button3_selected"
+        android:gravity="center"
+        android:text="쿠키 선택"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <GridLayout
+        android:id="@+id/cookie_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="2">
+
+        <Button
+            android:id="@+id/cookieBtn1"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/dark_choco_xml"
+            android:onClick="btnClick"
+            android:text="더블 초코칩"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/cookieBtn2"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/choco_xml"
+            android:onClick="btnClick"
+            android:text="초코칩"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/cookieBtn3"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/oatmeal_xml"
+            android:onClick="btnClick"
+            android:text="오트밀"
+            android:textSize="12sp" />
+        <Button
+            android:id="@+id/cookieBtn4"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/raspberry_xml"
+            android:onClick="btnClick"
+            android:text="라즈베리"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/cookieBtn5"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/corner_button3"
+            android:drawableTop="@drawable/white_choco_xml"
+            android:onClick="btnClick"
+            android:text="마카다미아"
+            android:textSize="12sp" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/setSelect_toPrev"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corner_button4"
+            android:text="이전"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/setSelect_pass"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/corner_button3_selected"
+            android:text="장바구니 담기"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+
+
+</LinearLayout>

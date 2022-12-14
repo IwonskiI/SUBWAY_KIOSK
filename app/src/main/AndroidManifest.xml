@@ -12,14 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Subway_kiosk"
         tools:targetApi="31">
+
         <activity
-            android:name=".manager.ManagerStockMeat"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".manager.ManagerStockMeat"
+            android:exported="true">
         </activity>
         <activity
             android:name=".manager.ManagerStockBread"
@@ -37,18 +43,12 @@
         <activity
             android:name=".order.MeatSelect"
             android:exported="true">
-
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".order.MenuSelect"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".order.tester"
@@ -63,6 +63,9 @@
             android:name=".order.SauceSelect"
             android:exported="true" />
         <activity
+            android:name=".order.CookieSelect"
+            android:exported="true" />
+        <activity
             android:name=".ManagerActivity"
             android:exported="true" />
         <activity
@@ -71,7 +74,5 @@
         <activity
             android:name=".manager.ManagerSell"
             android:exported="true" />
-
     </application>
-
 </manifest>

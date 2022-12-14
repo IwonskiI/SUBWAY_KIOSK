@@ -61,7 +61,7 @@ class SauceSelect : AppCompatActivity()
 
         val passBtn = findViewById<Button>(R.id.breadCheeseSelect_pass)
         passBtn.setOnClickListener {
-            val nextIntent = Intent(this@SauceSelect, tester::class.java)
+            val nextIntent = Intent(this@SauceSelect, CookieSelect::class.java)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             startActivity(nextIntent)
         }
