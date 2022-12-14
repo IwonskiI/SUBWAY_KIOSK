@@ -13,13 +13,7 @@ import com.example.subway_kiosk.util.Sandwich
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlin.system.exitProcess
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
+
 
 class ManagerSauceSelect : AppCompatActivity()
 {
@@ -69,6 +63,8 @@ class ManagerSauceSelect : AppCompatActivity()
 
         val passBtn = findViewById<Button>(R.id.breadCheeseSelect_pass)
         passBtn.setText("완료")
+        passBtn.setBackgroundResource(R.drawable.corner_button3_selected)
+        passBtn.setTextColor(ContextCompat.getColor(applicationContext, R.color.white))
         passBtn.setOnClickListener {
             val nextIntent = Intent(this@ManagerSauceSelect, ManagerActivity::class.java)
             stockRef.child(intent.getStringExtra("menuNum")!!).setValue(intent.getParcelableExtra<Sandwich>("selectedSandwich"))
