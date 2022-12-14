@@ -13,23 +13,52 @@
         android:theme="@style/Theme.Subway_kiosk"
         tools:targetApi="31">
         <activity
-            android:name=".manager.ManagerStockBread"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-        <activity
             android:name=".manager.ManagerStockMeat"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".manager.ManagerStockBread"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".manager.ManagerStockVege"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".manager.ManagerStockSauce"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".manager.ManagerMeatSelect"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".manager.ManagerMenuSelect"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".manager.ManagerBreadCheeseSelect"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".manager.ManagerVegeSelect"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".manager.ManagerSauceSelect"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".manager.ManagerTester"
+            android:exported="true">
+        </activity>
+
+
 
         <activity
             android:name=".order.MeatSelect"
             android:exported="true">
+
 
 
             <meta-data
@@ -56,7 +85,14 @@
             android:exported="true" />
         <activity
             android:name=".ManagerActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".manager.ManagerEditMenu"
             android:exported="true" />

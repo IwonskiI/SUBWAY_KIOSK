@@ -9,16 +9,39 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:src="@drawable/subway_logo2"></ImageView>
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:text="재고 현황"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/subway_gr">
-    </TextView>
+        >
+        <View
+            android:layout_width="35dp"
+            android:layout_height="0dp"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="재고 현황"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/subway_gr" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/home"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:background="@drawable/home" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +53,7 @@
             android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:background="@drawable/corner_button2"
-            android:text="고기/단백질"
+            android:text="메인 재료"
             android:layout_margin="5dp"
             >
         </Button>
@@ -44,7 +67,7 @@
             >
         </Button>
         <Button
-            android:id="@+id/manage_veg"
+            android:id="@+id/manage_vege"
             android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:background="@drawable/corner_button2"
@@ -63,7 +86,7 @@
         </Button>
     </LinearLayout>
     <GridLayout
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
     android:layout_weight="1"
@@ -81,7 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/bread_white_xml"
             android:onClick="btnClick"
             android:text="화이트"
             android:textColor="@color/black"
@@ -127,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/bread_honey_xml"
             android:onClick="btnClick"
             android:text="허니오트"
             android:textColor="@color/black"
@@ -173,7 +196,7 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/bread_wheet_xml"
             android:onClick="btnClick"
             android:text="위트"
             android:textColor="@color/black"
@@ -219,7 +242,7 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/bread_pamasan_xml"
             android:onClick="btnClick"
             android:text="파마산 오레가노"
             android:textColor="@color/black"
@@ -265,7 +288,7 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/bread_hati_xml"
             android:onClick="btnClick"
             android:text="하티"
             android:textColor="@color/black"
@@ -311,7 +334,7 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/bread_flat_xml"
             android:onClick="btnClick"
             android:text="플랫 브레드"
             android:textColor="@color/black"
@@ -357,7 +380,7 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/cheese_american_xml"
             android:onClick="btnClick"
             android:text="아메리카 치즈"
             android:textColor="@color/black"
@@ -403,9 +426,9 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/cheese_mozzarella_xml"
             android:onClick="btnClick"
-            android:text="모짜렐라 체즈"
+            android:text="모짜렐라 치즈"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="12sp">
@@ -449,7 +472,7 @@
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:drawableTop="@drawable/meat_select_ham_xml"
+            android:drawableTop="@drawable/cheese_shred_xml"
             android:onClick="btnClick"
             android:text="슈레드 치즈"
             android:textColor="@color/black"
