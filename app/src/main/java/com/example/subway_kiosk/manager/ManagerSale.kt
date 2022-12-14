@@ -40,11 +40,9 @@ class ManagerSale : AppCompatActivity() {
 
         binding.todaySetBtn.setText("세트 메뉴: " + todaySet + "원")
         binding.todaySingleBtn.setText("단품 메뉴: " + todaySingle + "원")
-        binding.todaySideBtn.setText("사이드 메뉴: " + todaySide + "원")
 
         binding.monthSetBtn.setText("세트 메뉴: " + monthSet + "원")
         binding.monthSingleBtn.setText("단품 메뉴: " + monthSingle + "원")
-        binding.monthSideBtn.setText("사이드 메뉴: " + monthSide + "원")
 
         binding.todayTotalTv.setText("일간 총 매출: " + todayTotal + "원")
         binding.monthTotalTv.setText("월간 총 매출: " + monthTotal + "원")
@@ -83,14 +81,7 @@ class ManagerSale : AppCompatActivity() {
                 show()
             }
         }
-        binding.todaySideBtn.setOnClickListener {
-            val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
-            AlertDialog.Builder(this).run {
-                setView(dialogBinding.root)
-                setPositiveButton("닫기", null)
-                show()
-            }
-        }
+
         binding.monthSetBtn.setOnClickListener {
             val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
             AlertDialog.Builder(this).run {
@@ -99,14 +90,7 @@ class ManagerSale : AppCompatActivity() {
                 show()
             }
         }
-        binding.monthSideBtn.setOnClickListener {
-            val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
-            AlertDialog.Builder(this).run {
-                setView(dialogBinding.root)
-                setPositiveButton("닫기", null)
-                show()
-            }
-        }
+
         binding.monthSingleBtn.setOnClickListener {
             val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
             AlertDialog.Builder(this).run {
