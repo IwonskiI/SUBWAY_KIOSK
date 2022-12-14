@@ -1,26 +1,32 @@
 package com.example.subway_kiosk.manager
 
+import android.os.Build
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.subway_kiosk.databinding.ManagerSellBinding
-import com.example.subway_kiosk.databinding.SetDialogBinding
-import com.example.subway_kiosk.databinding.SideDialogBinding
-import com.example.subway_kiosk.databinding.SingleDialogBinding
+import com.example.subway_kiosk.databinding.*
+import com.example.subway_kiosk.util.Sale
+import com.example.subway_kiosk.util.SaleAdapter
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import java.time.LocalDate
 
-class ManagerSell : AppCompatActivity() {
-    private lateinit var binding: ManagerSellBinding
+class ManagerSale : AppCompatActivity() {
+    private lateinit var binding: ManagerSaleBinding
+    private lateinit var database: DatabaseReference
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ManagerSellBinding.inflate(layoutInflater)
+        binding = ManagerSaleBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        var setMenus : HashMap<String, Any> = hashMapOf("One" to 1, "Two" to 2, "Three" to 3, "Test" to 4)
-        var sideMenus: HashMap<String, Any>
-        var singleMenus: HashMap<String, Any>
 
 
         // DB connection
+        database = Firebase.database.reference
+
         var todaySet: String = "30,000"
         var todaySingle: String = "30,000"
         var todaySide: String = "30,000"
@@ -43,20 +49,34 @@ class ManagerSell : AppCompatActivity() {
         binding.todayTotalTv.setText("일간 총 매출: " + todayTotal + "원")
         binding.monthTotalTv.setText("월간 총 매출: " + monthTotal + "원")
 
+
         // event
         binding.todaySetBtn.setOnClickListener {
-            val dialogBinding = SetDialogBinding.inflate(layoutInflater)
+            val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
-                for (setMenu in setMenus) {
-                    dialogBinding.setTv.append(setMenu.toString())
-                }
+                var OrderList = arrayListOf<Sale>(
+                    Sale("이름", 5000, LocalDate.now()),
+                    Sale("맛있따", 5000, LocalDate.now()),
+                    Sale("이름", 5000, LocalDate.now()),
+                    Sale("이름", 5000, LocalDate.now()),
+                    Sale("야미야미", 5000, LocalDate.now()),
+                    Sale("이름", 5000, LocalDate.now()),
+                    Sale("이름", 5000, LocalDate.now()),
+                    Sale("헤헤", 5000, LocalDate.now()),
+                    Sale("이름", 5000, LocalDate.now()),
+                    Sale("이름", 5000, LocalDate.now()),
+                )
+
+                val Adapter = SaleAdapter(this.context, OrderList)
+                dialogBinding.listView.adapter = Adapter
+
                 show()
             }
         }
         binding.todaySingleBtn.setOnClickListener {
-            val dialogBinding = SingleDialogBinding.inflate(layoutInflater)
+            val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
@@ -64,7 +84,7 @@ class ManagerSell : AppCompatActivity() {
             }
         }
         binding.todaySideBtn.setOnClickListener {
-            val dialogBinding = SideDialogBinding.inflate(layoutInflater)
+            val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
@@ -72,7 +92,7 @@ class ManagerSell : AppCompatActivity() {
             }
         }
         binding.monthSetBtn.setOnClickListener {
-            val dialogBinding = SetDialogBinding.inflate(layoutInflater)
+            val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
@@ -80,7 +100,7 @@ class ManagerSell : AppCompatActivity() {
             }
         }
         binding.monthSideBtn.setOnClickListener {
-            val dialogBinding = SingleDialogBinding.inflate(layoutInflater)
+            val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)
@@ -88,7 +108,7 @@ class ManagerSell : AppCompatActivity() {
             }
         }
         binding.monthSingleBtn.setOnClickListener {
-            val dialogBinding = SideDialogBinding.inflate(layoutInflater)
+            val dialogBinding = SaleDialogBinding.inflate(layoutInflater)
             AlertDialog.Builder(this).run {
                 setView(dialogBinding.root)
                 setPositiveButton("닫기", null)

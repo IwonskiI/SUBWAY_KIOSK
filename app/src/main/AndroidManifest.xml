@@ -61,7 +61,7 @@
             android:name=".manager.ManagerEditMenu"
             android:exported="true" />
         <activity
-            android:name=".manager.ManagerSell"
+            android:name=".manager.ManagerSale"
             android:exported="true" />
 
     </application>

@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.subway_kiosk.manager.ManagerSell
+import com.example.subway_kiosk.manager.ManagerSale
 import com.example.subway_kiosk.manager.ManagerStockMeat
 
 class ManagerActivity : AppCompatActivity() {
@@ -21,7 +21,7 @@ class ManagerActivity : AppCompatActivity() {
 
         //listener
         editMenuBtn.setOnClickListener {
-            val intent = Intent(this, ManagerSell::class.java)
+            val intent = Intent(this, ManagerSale::class.java)
             startActivity(intent)
         }
 
@@ -31,10 +31,9 @@ class ManagerActivity : AppCompatActivity() {
         }
 
         sellStatusBtn.setOnClickListener {
-            val intent = Intent(this, ManagerSell::class.java)
+            val intent = Intent(this, ManagerSale::class.java)
             startActivity(intent)
         }
-
     }
 
 }
