@@ -85,6 +85,11 @@ class MeatSelect : AppCompatActivity()
             nextIntent.putExtra("selectedMeat", pressedBtnList)
             startActivity(nextIntent)
         }
+
+        val prevBtn = findViewById<Button>(R.id.meatSelect_toPrev)
+        prevBtn.setOnClickListener {
+            finish()
+        }
     }
 
     fun btnClick(v: View)
