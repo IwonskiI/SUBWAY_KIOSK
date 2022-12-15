@@ -29,12 +29,12 @@ class ManagerBreadCheeseSelect : AppCompatActivity()
 
             when (selectedSandwich.getBreadID())
             {
-                1    -> selectedBread = findViewById(R.id.breadBtn1)
-                2    -> selectedBread = findViewById(R.id.breadBtn2)
-                3    -> selectedBread = findViewById(R.id.breadBtn3)
-                4    -> selectedBread = findViewById(R.id.breadBtn4)
-                5    -> selectedBread = findViewById(R.id.breadBtn5)
-                6    -> selectedBread = findViewById(R.id.breadBtn6)
+                1    -> selectedBread = findViewById(R.id.bread_white)
+                2    -> selectedBread = findViewById(R.id.bread_honey)
+                3    -> selectedBread = findViewById(R.id.bread_wheet)
+                4    -> selectedBread = findViewById(R.id.bread_pamasan)
+                5    -> selectedBread = findViewById(R.id.bread_hati)
+                6    -> selectedBread = findViewById(R.id.bread_flat)
                 else -> exitProcess(-1)
             }
 
@@ -80,32 +80,32 @@ class ManagerBreadCheeseSelect : AppCompatActivity()
 
         when (selectedBtn.id)
         {
-            R.id.breadBtn1  ->
+            R.id.bread_white  ->
             {
                 selectedBread = selectedBtn
                 selectedSandwich.setBreadID(1)
             }
-            R.id.breadBtn2  ->
+            R.id.bread_honey  ->
             {
                 selectedBread = selectedBtn
                 selectedSandwich.setBreadID(2)
             }
-            R.id.breadBtn3  ->
+            R.id.bread_wheet  ->
             {
                 selectedBread = selectedBtn
                 selectedSandwich.setBreadID(3)
             }
-            R.id.breadBtn4  ->
+            R.id.bread_pamasan  ->
             {
                 selectedBread = selectedBtn
                 selectedSandwich.setBreadID(4)
             }
-            R.id.breadBtn5  ->
+            R.id.bread_hati  ->
             {
                 selectedBread = selectedBtn
                 selectedSandwich.setBreadID(5)
             }
-            R.id.breadBtn6  ->
+            R.id.bread_flat  ->
             {
                 selectedBread = selectedBtn
                 selectedSandwich.setBreadID(6)

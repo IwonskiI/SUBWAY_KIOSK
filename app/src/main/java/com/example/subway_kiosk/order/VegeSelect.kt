@@ -8,6 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.subway_kiosk.R
 import com.example.subway_kiosk.util.Sandwich
+import com.example.subway_kiosk.util.Stock
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlin.system.exitProcess
 
 class VegeSelect : AppCompatActivity()
@@ -24,10 +30,48 @@ class VegeSelect : AppCompatActivity()
     lateinit var jalapenoBtn: Button
     lateinit var avacadoBtn: Button
 
+    var RootRef = Firebase.database.reference
+    var stockRef = RootRef.child("stock")
+    var cnt: Int = 0
+    var vege_arr = arrayOf(3,8,1,7,5,6,4,2)
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.vege_select)
+
+        val VegeImageList = arrayListOf<Button>(
+            findViewById(R.id.cucumber),
+            findViewById(R.id.jalapeno),
+            findViewById(R.id.lettuce),
+            findViewById(R.id.olive),
+            findViewById(R.id.onion),
+            findViewById(R.id.pickle),
+            findViewById(R.id.pimento),
+            findViewById(R.id.tomato),
+        )
+        stockRef.child("vege").addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (item in snapshot.children) {
+                    var vege : Stock = item.getValue(Stock::class.java)!!
+                    if(vege.num < 1){
+                        VegeImageList[cnt].setCompoundDrawablesWithIntrinsicBounds(
+                            null, getDrawable(R.drawable.sauce_none_xml), null, null
+                        )
+                        selectedSandwich.changeVege(vege_arr[cnt])
+                        VegeImageList[cnt].setBackgroundResource(R.drawable.corner_button3)
+                        VegeImageList[cnt].setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
+                        VegeImageList[cnt].isEnabled = false;
+                        VegeImageList[cnt].isClickable = false;
+                    }
+                    cnt++;
+                }
+                cnt = 0;
+            }
+            override fun onCancelled(error: DatabaseError) {
+                print(error.message)
+            }
+        } )
 
         lettuceBtn = findViewById(R.id.lettuce)
         tomatoBtn = findViewById(R.id.tomato)
@@ -87,6 +131,7 @@ class VegeSelect : AppCompatActivity()
             R.id.avocado  -> selectedSandwich.changeVege(9)
             else          -> exitProcess(-1)
         }
+
 
         updateBtnStatus()
     }
