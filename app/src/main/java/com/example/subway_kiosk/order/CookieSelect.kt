@@ -2,6 +2,7 @@ package com.example.subway_kiosk.order
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.GridLayout
@@ -32,9 +33,14 @@ class CookieSelect : AppCompatActivity()
         cookieLayout.visibility = View.INVISIBLE
         cookieTitle.visibility = View.INVISIBLE
 
+        if(intent.hasExtra("selectedSandwich"))
+            Log.d("hihi","hihi")
+
         if (intent.hasExtra("selectedSandwich"))
         {
             selectedSandwich = intent.getParcelableExtra<Sandwich>("selectedSandwich")!!
+            Log.d("sand",selectedSandwich.getSetBool().toString())
+            Log.d("sand",selectedSandwich.getCookieID().toString())
             shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             println(selectedSandwich.toString())
 

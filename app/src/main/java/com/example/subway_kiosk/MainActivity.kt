@@ -46,6 +46,12 @@ class MainActivity : AppCompatActivity()
             startActivity(nextIntent)
         }
 
+        pay_btn.setOnClickListener {
+            val nextIntent = Intent(this@MainActivity, Payment::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
+            startActivity(nextIntent)
+        }
+
         home_btn.setOnClickListener {
             finish()
         }
