@@ -20,9 +20,14 @@ class ManagerActivity : AppCompatActivity() {
         val editMenuBtn = findViewById<Button>(R.id.edit_menu)
         val stockStatusBtn = findViewById<Button>(R.id.stock_status)
         val sellStatusBtn = findViewById<Button>(R.id.sell_status)
+        val home = findViewById<Button>(R.id.home)
 
 
         //listener
+        home.setOnClickListener {
+            finish()
+        }
+
         editMenuBtn.setOnClickListener {
             val intent = Intent(this, ManagerEditMenu::class.java)
             startActivity(intent)

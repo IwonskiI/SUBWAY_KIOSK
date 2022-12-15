@@ -10,11 +10,29 @@
         android:orientation="vertical"
         android:background="@color/subway_gr">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="180dp"
-            android:src="@drawable/subway_logo"
-            ></ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30dp">
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"></View>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_weight="3"
+                android:background="@drawable/subway_logo"></Button>
+            <Button
+                android:id="@+id/home"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/home2"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -120,12 +120,16 @@ class ManagerMenuSelect : AppCompatActivity()
 
                 var sandwichImgView = dialog.findViewById<ImageView>(R.id.dialog_img)
                 sandwichImgView?.setImageResource(Sandwich.hashMapIDtoXML.getValue(it.getSandwichID()))
+
+                var sandwichInfo = dialog.findViewById<TextView>(R.id.dialog_info)
+                sandwichInfo?.setText(Sandwich.hashMapIDtoInfo.getValue(it.getSandwichID()))
             }
         }
 
         val selectBtn = dialog.findViewById<Button>(R.id.dialog_selectMenu)
         selectBtn?.setOnClickListener {
             dialog.hide()
+            finish()
             val nextIntent = Intent(this@ManagerMenuSelect, ManagerBreadCheeseSelect::class.java)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             nextIntent.putExtra("menuNum",intent.getStringExtra("menuNum"))

@@ -27,6 +27,7 @@ class ManagerMeatSelect : AppCompatActivity()
                 return@setOnClickListener
             }
             val nextIntent = Intent(this@ManagerMeatSelect, ManagerMenuSelect::class.java)
+            finish()
             nextIntent.putExtra("selectedMeat", pressedBtnList)
             nextIntent.putExtra("menuNum",intent.getStringExtra("menuNum"))
             startActivity(nextIntent)

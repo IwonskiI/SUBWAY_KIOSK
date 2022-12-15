@@ -129,7 +129,7 @@ class BreadCheeseSelect : AppCompatActivity()
 
         val passAllBtn = findViewById<Button>(R.id.breadCheeseSelect_passAll)
         passAllBtn.setOnClickListener {
-            val nextIntent = Intent(this@BreadCheeseSelect, tester::class.java)
+            val nextIntent = Intent(this@BreadCheeseSelect, CookieSelect::class.java)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             nextIntent.putExtra("shoppingCart",shopping_cart)
             startActivity(nextIntent)
