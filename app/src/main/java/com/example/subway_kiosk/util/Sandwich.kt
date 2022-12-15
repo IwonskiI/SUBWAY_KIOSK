@@ -16,7 +16,8 @@ class Sandwich(
     private var vege: Vegetable,
     private var sauceID: ArrayList<Int>,
     private var setSel: Boolean,
-    private var cookieID: Int
+    private var cookieID: Int,
+    private var price: Int
 ) : Parcelable
 {
     private lateinit var breadName: String
@@ -108,6 +109,11 @@ class Sandwich(
     fun getCookieName(): String
     {
         return cookieName
+    }
+
+    fun getPrice(): Int
+    {
+        return price
     }
 
     fun setBreadID(newID: Int)
@@ -277,7 +283,7 @@ class Sandwich(
         sauceCopy.addAll(sauceID)
 
         return Sandwich(
-            sandwichID, sandwichName, breadID, cheeseID, vege.deepCopy(), sauceCopy, setSel, cookieID
+            sandwichID, sandwichName, breadID, cheeseID, vege.deepCopy(), sauceCopy, setSel, cookieID, price
         )
     }
 
@@ -338,6 +344,7 @@ class Sandwich(
                 Vegetable(false, false, false, false, false, false, false, false, false),
                 arrayListOf<Int>(),
                 false,
+                0,
                 0
             ), Sandwich(
                 1,
@@ -347,7 +354,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                5400
             ), Sandwich(
                 2,
                 "써브웨이 클럽",
@@ -356,7 +364,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                5900
             ), Sandwich(
                 3,
                 "햄",
@@ -365,7 +374,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                4800
             ), Sandwich(
                 4,
                 "치킨 베이컨 아보카도",
@@ -374,7 +384,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                6500
             ), Sandwich(
                 5,
                 "비엘티",
@@ -383,7 +394,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                5400
             ), Sandwich(
                 6,
                 "스파이시 이탈리안",
@@ -392,7 +404,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                5700
             ), Sandwich(
                 7,
                 "로티세리 바비큐 치킨",
@@ -401,7 +414,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                6100
             ), Sandwich(
                 8,
                 "치킨 슬라이스",
@@ -410,7 +424,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                5300
             ), Sandwich(
                 9,
                 "풀드 포크 바비큐",
@@ -419,7 +434,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                6000
             ), Sandwich(
                 10,
                 "K-바비큐",
@@ -428,7 +444,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                6000
             ), Sandwich(
                 11,
                 "스파이시 바비큐",
@@ -437,7 +454,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                6100
             ), Sandwich(
                 12,
                 "로스트 치킨",
@@ -446,7 +464,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                6100
             ), Sandwich(
                 13,
                 "스테이크 & 치즈",
@@ -455,7 +474,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                6500
             ), Sandwich(
                 14,
                 "치킨 데리야끼",
@@ -464,7 +484,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                5700
             ), Sandwich(
                 15,
                 "쉬림프",
@@ -473,7 +494,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                5900
             ), Sandwich(
                 16,
                 "에그마요",
@@ -482,7 +504,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                4300
             ), Sandwich(
                 17,
                 "참치",
@@ -491,7 +514,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                4800
             ), Sandwich(
                 18,
                 "베지",
@@ -500,7 +524,8 @@ class Sandwich(
                 Vegetable(true, true, true, true, true, true, true, true, false),
                 arrayListOf<Int>(301, 101),
                 false,
-                0
+                0,
+                3900
             )
         )
 

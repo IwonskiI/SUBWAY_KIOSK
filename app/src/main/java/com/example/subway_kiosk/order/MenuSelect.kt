@@ -13,6 +13,9 @@ import java.lang.Integer.min
 
 class MenuSelect : AppCompatActivity()
 {
+
+    var shopping_cart = arrayListOf<Sandwich?>()
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -23,6 +26,7 @@ class MenuSelect : AppCompatActivity()
 
         if (intent.hasExtra("selectedMeat"))
         {
+            shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             val mainTextView = findViewById<TextView>(R.id.menuselect_text)
             val selectedMeatTextView1 = findViewById<TextView>(R.id.menuselect_meat1)
             val selectedMeatTextView2 = findViewById<TextView>(R.id.menuselect_meat2)
@@ -127,6 +131,7 @@ class MenuSelect : AppCompatActivity()
         selectBtn?.setOnClickListener {
             dialog.hide()
             val nextIntent = Intent(this@MenuSelect, BreadCheeseSelect::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             startActivity(nextIntent)
         }

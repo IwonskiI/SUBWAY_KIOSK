@@ -14,7 +14,7 @@ import kotlin.system.exitProcess
 class SauceSelect : AppCompatActivity()
 {
     var selectedSandwich = Sandwich.menuList.get(0).deepCopy()
-
+    var shopping_cart = arrayListOf<Sandwich?>()
     var sauceBtnList = arrayListOf<Button>()
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -41,6 +41,7 @@ class SauceSelect : AppCompatActivity()
 
         if (intent.hasExtra("selectedSandwich"))
         {
+            shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             selectedSandwich = intent.getParcelableExtra<Sandwich>("selectedSandwich")!!
             println(selectedSandwich.toString())
 
@@ -55,6 +56,7 @@ class SauceSelect : AppCompatActivity()
         val passAllBtn = findViewById<Button>(R.id.breadCheeseSelect_passAll)
         passAllBtn.setOnClickListener {
             val nextIntent = Intent(this@SauceSelect, tester::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             startActivity(nextIntent)
         }
@@ -62,6 +64,7 @@ class SauceSelect : AppCompatActivity()
         val passBtn = findViewById<Button>(R.id.breadCheeseSelect_pass)
         passBtn.setOnClickListener {
             val nextIntent = Intent(this@SauceSelect, CookieSelect::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             startActivity(nextIntent)
         }

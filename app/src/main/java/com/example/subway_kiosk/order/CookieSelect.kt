@@ -16,6 +16,7 @@ import kotlin.system.exitProcess
 class CookieSelect : AppCompatActivity()
 {
     var selectedSandwich = Sandwich.menuList.get(0).deepCopy()
+    var shopping_cart = arrayListOf<Sandwich?>()
 
     lateinit var selectedSet: Button
     lateinit var selectedCookie: Button
@@ -34,6 +35,7 @@ class CookieSelect : AppCompatActivity()
         if (intent.hasExtra("selectedSandwich"))
         {
             selectedSandwich = intent.getParcelableExtra<Sandwich>("selectedSandwich")!!
+            shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             println(selectedSandwich.toString())
 
             when (selectedSandwich.getSetBool())
@@ -68,6 +70,7 @@ class CookieSelect : AppCompatActivity()
         val passBtn = findViewById<Button>(R.id.setSelect_pass)
         passBtn.setOnClickListener {
             val nextIntent = Intent(this@CookieSelect, MainActivity::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             startActivity(nextIntent)
         }

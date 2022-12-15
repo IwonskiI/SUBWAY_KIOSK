@@ -16,7 +16,7 @@ class tester : AppCompatActivity()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.tester)
 
         val testText = findViewById<TextView>(R.id.testView)
         if(intent.hasExtra("selectedSandwich"))

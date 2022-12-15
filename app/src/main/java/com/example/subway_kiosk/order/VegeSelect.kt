@@ -13,6 +13,7 @@ import kotlin.system.exitProcess
 class VegeSelect : AppCompatActivity()
 {
     var selectedSandwich = Sandwich.menuList.get(0).deepCopy()
+    var shopping_cart = arrayListOf<Sandwich?>()
     lateinit var lettuceBtn: Button
     lateinit var tomatoBtn: Button
     lateinit var cucumberBtn: Button
@@ -40,6 +41,7 @@ class VegeSelect : AppCompatActivity()
 
         if (intent.hasExtra("selectedSandwich"))
         {
+            shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             selectedSandwich = intent.getParcelableExtra<Sandwich>("selectedSandwich")!!
             println(selectedSandwich.toString())
 
@@ -54,6 +56,7 @@ class VegeSelect : AppCompatActivity()
         val passAllBtn = findViewById<Button>(R.id.breadCheeseSelect_passAll)
         passAllBtn.setOnClickListener {
             val nextIntent = Intent(this@VegeSelect, tester::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             startActivity(nextIntent)
         }
@@ -61,6 +64,7 @@ class VegeSelect : AppCompatActivity()
         val passBtn = findViewById<Button>(R.id.breadCheeseSelect_pass)
         passBtn.setOnClickListener {
             val nextIntent = Intent(this@VegeSelect, SauceSelect::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             startActivity(nextIntent)
         }

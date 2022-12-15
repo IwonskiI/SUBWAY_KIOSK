@@ -8,11 +8,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.subway_kiosk.R
+import com.example.subway_kiosk.util.Sandwich
 
 
 class MeatSelect : AppCompatActivity()
 {
     var pressedBtnList = ArrayList<Int>()
+    var shopping_cart = arrayListOf<Sandwich?>()
+
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -20,6 +23,7 @@ class MeatSelect : AppCompatActivity()
         setContentView(R.layout.meat_select)
 
         val nextBtn = findViewById<Button>(R.id.meatSelect_toNext)
+        shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
         nextBtn.setOnClickListener {
             if (pressedBtnList.size == 0)
             {
@@ -27,6 +31,7 @@ class MeatSelect : AppCompatActivity()
                 return@setOnClickListener
             }
             val nextIntent = Intent(this@MeatSelect, MenuSelect::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
             nextIntent.putExtra("selectedMeat", pressedBtnList)
             startActivity(nextIntent)
         }

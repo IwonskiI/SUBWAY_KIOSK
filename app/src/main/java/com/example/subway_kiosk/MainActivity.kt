@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity()
 
         regularorder.setOnClickListener{
             val nextIntent = Intent(this@MainActivity, MeatSelect::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
             startActivity(nextIntent)
         }
 
@@ -33,9 +34,10 @@ class MainActivity : AppCompatActivity()
         if(intent.hasExtra("selectedSandwich")){
             shop.visibility = View.VISIBLE
             pay_btn.visibility = View.VISIBLE
+            shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             shopping_cart.add(intent.getParcelableExtra<Sandwich>("selectedSandwich"))
             for (item in shopping_cart) {
-                shop.text = shop.text.toString() + item?.getSandwichName() + "  +  " + item?.getCookieName() + '\n'
+                shop.setText(shop.text.toString() + item?.getSandwichName() + "  +  " + item?.getCookieName() + '\n')
             }
         }
         else{
