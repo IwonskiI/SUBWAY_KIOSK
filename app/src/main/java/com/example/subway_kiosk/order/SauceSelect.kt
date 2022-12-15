@@ -26,13 +26,13 @@ class SauceSelect : AppCompatActivity()
     var RootRef = Firebase.database.reference
     var stockRef = RootRef.child("stock")
     var cnt: Int = 0
-    var sauce_str = arrayOf("chipotle","honey","horseradish","hot_chili","italianDressing","mayonnaise",
-        "mustard","olive","pepper","ranch","redWine","salt","smoke","sweet_chili","sweet_onion")
+
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sauce_select)
-
+        var sauce_arr = arrayOf(202,102,204,201,301,402,203,501,503,401,302,502,104,103,101)
         val SauceImageList = arrayListOf<Button>(
             findViewById(R.id.chipotle),
             findViewById(R.id.honeyMustard),
@@ -51,14 +51,43 @@ class SauceSelect : AppCompatActivity()
             findViewById(R.id.sweetOnion),
         )
 
+        sauceBtnList.add(findViewById(R.id.sweetOnion))//1
+        sauceBtnList.add(findViewById(R.id.honeyMustard))//2
+        sauceBtnList.add(findViewById(R.id.sweetChili))//3
+        sauceBtnList.add(findViewById(R.id.smokeBBQ))//4
+        sauceBtnList.add(findViewById(R.id.hotChilli))//5
+        sauceBtnList.add(findViewById(R.id.chipotle))//6
+        sauceBtnList.add(findViewById(R.id.mustard))//7
+        sauceBtnList.add(findViewById(R.id.horseradish))//8
+        sauceBtnList.add(findViewById(R.id.italianDressing))//9
+        sauceBtnList.add(findViewById(R.id.redWine))//10
+        sauceBtnList.add(findViewById(R.id.ranch))//11
+        sauceBtnList.add(findViewById(R.id.mayonnaise))//12
+        sauceBtnList.add(findViewById(R.id.oliveOil))//13
+        sauceBtnList.add(findViewById(R.id.salt))//14
+        sauceBtnList.add(findViewById(R.id.pepper))//15
+        sauceBtnList.add(findViewById(R.id.noSauce))//16
+
+
+
+        if (intent.hasExtra("selectedSandwich"))
+        {
+            shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
+            selectedSandwich = intent.getParcelableExtra<Sandwich>("selectedSandwich")!!
+            println(selectedSandwich.toString())
+
+            updateBtnStatus()
+        }
+
         stockRef.child("sauce").addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (item in snapshot.children) {
                     var sauce : Stock = item.getValue(Stock::class.java)!!
-                    if(sauce.num < 1){
+                    if(sauce.num < 5){
                         SauceImageList[cnt].setCompoundDrawablesWithIntrinsicBounds(
                             null, getDrawable(R.drawable.sauce_none_xml), null, null
                         )
+                        selectedSandwich.removeSauce(sauce_arr[cnt])
                         SauceImageList[cnt].setBackgroundResource(R.drawable.corner_button3)
                         SauceImageList[cnt].setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
                         SauceImageList[cnt].isEnabled = false;
@@ -72,32 +101,6 @@ class SauceSelect : AppCompatActivity()
                 print(error.message)
             }
         } )
-
-        sauceBtnList.add(findViewById(R.id.sweetOnion))
-        sauceBtnList.add(findViewById(R.id.honeyMustard))
-        sauceBtnList.add(findViewById(R.id.sweetChili))
-        sauceBtnList.add(findViewById(R.id.smokeBBQ))
-        sauceBtnList.add(findViewById(R.id.hotChilli))
-        sauceBtnList.add(findViewById(R.id.chipotle))
-        sauceBtnList.add(findViewById(R.id.mustard))
-        sauceBtnList.add(findViewById(R.id.horseradish))
-        sauceBtnList.add(findViewById(R.id.italianDressing))
-        sauceBtnList.add(findViewById(R.id.redWine))
-        sauceBtnList.add(findViewById(R.id.ranch))
-        sauceBtnList.add(findViewById(R.id.mayonnaise))
-        sauceBtnList.add(findViewById(R.id.oliveOil))
-        sauceBtnList.add(findViewById(R.id.salt))
-        sauceBtnList.add(findViewById(R.id.pepper))
-        sauceBtnList.add(findViewById(R.id.noSauce))
-
-        if (intent.hasExtra("selectedSandwich"))
-        {
-            shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
-            selectedSandwich = intent.getParcelableExtra<Sandwich>("selectedSandwich")!!
-            println(selectedSandwich.toString())
-
-            updateBtnStatus()
-        }
 
         val prevBtn = findViewById<Button>(R.id.breadCheeseSelect_toPrev)
         prevBtn.setOnClickListener {
@@ -133,14 +136,18 @@ class SauceSelect : AppCompatActivity()
             R.id.honeyMustard    -> sauceID = 102
             R.id.sweetChili      -> sauceID = 103
             R.id.smokeBBQ        -> sauceID = 104
+
             R.id.hotChilli       -> sauceID = 201
             R.id.chipotle        -> sauceID = 202
             R.id.mustard         -> sauceID = 203
             R.id.horseradish     -> sauceID = 204
+
             R.id.italianDressing -> sauceID = 301
             R.id.redWine         -> sauceID = 302
+
             R.id.ranch           -> sauceID = 401
             R.id.mayonnaise      -> sauceID = 402
+
             R.id.oliveOil        -> sauceID = 501
             R.id.salt            -> sauceID = 502
             R.id.pepper          -> sauceID = 503

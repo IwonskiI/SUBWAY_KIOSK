@@ -9,8 +9,8 @@ import kotlin.system.exitProcess
 
 @Parcelize
 class Sandwich(
-    private val sandwichID: Int,
-    private val sandwichName: String,
+    private var sandwichID: Int,
+    private var sandwichName: String,
     private var breadID: Int,
     private var cheeseID: Int,
     private var vege: Vegetable,
@@ -20,6 +20,8 @@ class Sandwich(
     private var price: Int
 ) : Parcelable
 {
+
+
     private lateinit var breadName: String
     private lateinit var cheeseName: String
     private var sauceNameSet = HashMap<Int, String>()
@@ -116,6 +118,16 @@ class Sandwich(
         return price
     }
 
+    fun setSandwichID(newID: Int)
+    {
+        sandwichID = newID
+    }
+
+    fun setSandwichName(name: String)
+    {
+        sandwichName = name
+    }
+
     fun setBreadID(newID: Int)
     {
         breadID = newID
@@ -196,6 +208,10 @@ class Sandwich(
         }
     }
 
+    fun setSauce(SauceID: Int){
+        sauceID.add(SauceID)
+    }
+
     fun addSauce(newSauceID: Int): Boolean
     {
         return sauceID.add(newSauceID)
@@ -215,6 +231,10 @@ class Sandwich(
     {
         cookieID = newID
         setCookieName()
+    }
+
+    fun setPrice(setPrice : Int){
+        price = setPrice
     }
 
     private fun setBreadName()

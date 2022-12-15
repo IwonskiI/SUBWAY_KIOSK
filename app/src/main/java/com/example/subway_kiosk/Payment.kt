@@ -9,67 +9,61 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.marginTop
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.subway_kiosk.databinding.ActivityMainBinding
+import com.example.subway_kiosk.databinding.PaymentBinding
 import com.example.subway_kiosk.order.FastOrder
 import com.example.subway_kiosk.order.MeatSelect
 import com.example.subway_kiosk.util.Sandwich
 import com.example.subway_kiosk.util.cartAdapter
 
-class MainActivity : AppCompatActivity()
+class Payment : AppCompatActivity()
 {
     var shopping_cart = arrayListOf<Sandwich?>()
+    var total: Int = 0
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding = PaymentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val regularorder = findViewById<Button>(R.id.regular_order)
-        val fastorder = findViewById<Button>(R.id.fast_order)
-        val shop = findViewById<RecyclerView>(R.id.shopping_cart)
-        val pay_btn = findViewById<Button>(R.id.payment)
-        val home_btn = findViewById<Button>(R.id.home)
+        val cash_btn = findViewById<Button>(R.id.pay_cash)
+        val card_btn = findViewById<Button>(R.id.pay_card)
+        val pay_btn = findViewById<Button>(R.id.pay_pay)
 
-        regularorder.setOnClickListener{
-            val nextIntent = Intent(this@MainActivity, MeatSelect::class.java)
-            nextIntent.putExtra("shoppingCart",shopping_cart)
+        cash_btn.setOnClickListener {
+            Toast.makeText(this@Payment, "현금 결제가 완료되었습니다.", Toast.LENGTH_LONG).show()
+            val nextIntent = Intent(this@Payment, OrderComplete::class.java)
+            nextIntent.putExtra("total",total)
             startActivity(nextIntent)
         }
-
-        fastorder.setOnClickListener{
-            val nextIntent = Intent(this@MainActivity, FastOrder::class.java)
-            nextIntent.putExtra("shoppingCart",shopping_cart)
+        card_btn.setOnClickListener {
+            Toast.makeText(this@Payment, "카드 결제가 완료되었습니다.", Toast.LENGTH_LONG).show()
+            val nextIntent = Intent(this@Payment, OrderComplete::class.java)
+            nextIntent.putExtra("total",total)
             startActivity(nextIntent)
         }
-
         pay_btn.setOnClickListener {
-            val nextIntent = Intent(this@MainActivity, Payment::class.java)
-            nextIntent.putExtra("shoppingCart",shopping_cart)
+            Toast.makeText(this@Payment, "페이 결제가 완료되었습니다.", Toast.LENGTH_LONG).show()
+            val nextIntent = Intent(this@Payment, OrderComplete::class.java)
+            nextIntent.putExtra("total", total)
             startActivity(nextIntent)
         }
 
-        home_btn.setOnClickListener {
-            finish()
-        }
-
-
-        if(intent.hasExtra("selectedSandwich")){
-            shop.visibility = View.VISIBLE
-            pay_btn.visibility = View.VISIBLE
+        if(intent.hasExtra("shoppingCart")){
             shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
-            shopping_cart.add(intent.getParcelableExtra<Sandwich>("selectedSandwich"))
-            Log.d("cart",shopping_cart.toString())
+            for(item in shopping_cart){
+                total += item!!.getPrice()
+            }
+            binding.total.text = "총 금액: " + total
             binding.shoppingCart.layoutManager= LinearLayoutManager(this)
             binding.shoppingCart.adapter= cartAdapter(shopping_cart)
             binding.shoppingCart.addItemDecoration(DividerItemDecoration(this,LinearLayoutManager.VERTICAL))
         }
-        else{
-            shop.visibility = View.INVISIBLE
-            pay_btn.visibility = View.INVISIBLE
-        }
+
     }
 }

@@ -54,7 +54,7 @@ class MeatSelect : AppCompatActivity()
                 for (item in snapshot.children) {
                     var meat : Stock = item.getValue(Stock::class.java)!!
                     Log.d("meat",meat.num.toString())
-                    if(meat.num < 1){
+                    if(meat.num < 5){
                         MeatImageList[cnt].setCompoundDrawablesWithIntrinsicBounds(
                             null, getDrawable(R.drawable.sauce_none_xml), null, null
                         )

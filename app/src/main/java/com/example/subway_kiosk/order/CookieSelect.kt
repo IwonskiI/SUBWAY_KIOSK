@@ -2,6 +2,7 @@ package com.example.subway_kiosk.order
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.GridLayout
@@ -35,6 +36,8 @@ class CookieSelect : AppCompatActivity()
         if (intent.hasExtra("selectedSandwich"))
         {
             selectedSandwich = intent.getParcelableExtra<Sandwich>("selectedSandwich")!!
+            Log.d("sand",selectedSandwich.getSetBool().toString())
+            Log.d("sand",selectedSandwich.getCookieID().toString())
             shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             println(selectedSandwich.toString())
 
@@ -81,6 +84,7 @@ class CookieSelect : AppCompatActivity()
         val selectedBtn = findViewById<Button>(v.id)
         val cookieLayout: GridLayout = findViewById<GridLayout>(R.id.cookie_grid)
         val cookieTitle: TextView = findViewById<TextView>(R.id.cookie_select)
+        val price = selectedSandwich.getPrice()
 
         selectedSet.setBackgroundResource(R.drawable.corner_button3)
         selectedSet.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
@@ -96,6 +100,7 @@ class CookieSelect : AppCompatActivity()
                 selectedSet = selectedBtn
                 selectedSandwich.setCookieID(0)
                 selectedSandwich.setSet(false)
+                selectedSandwich.setPrice(price)
             }
             R.id.setBtn2  ->
             {
@@ -105,6 +110,7 @@ class CookieSelect : AppCompatActivity()
                 selectedSandwich.setCookieID(1)
                 selectedCookie = findViewById(R.id.cookieBtn1)
                 selectedSandwich.setSet(true)
+                selectedSandwich.setPrice(price + 1900)
 
             }
             R.id.cookieBtn1 ->

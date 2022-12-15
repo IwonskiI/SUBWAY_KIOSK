@@ -95,6 +95,14 @@
             android:name=".order.FastOrder"
             android:exported="true" />
         <activity
+            android:name=".Payment"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".OrderComplete"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".ManagerActivity"
             android:exported="true" >
         </activity>
