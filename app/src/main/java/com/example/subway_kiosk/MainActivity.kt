@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity()
         val regularorder = findViewById<Button>(R.id.regular_order)
         val fastorder = findViewById<Button>(R.id.fast_order)
         val shop = findViewById<RecyclerView>(R.id.shopping_cart)
-
         val pay_btn = findViewById<Button>(R.id.payment)
         val home_btn = findViewById<Button>(R.id.home)
 
