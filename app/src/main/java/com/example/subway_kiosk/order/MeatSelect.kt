@@ -25,9 +25,6 @@ class MeatSelect : AppCompatActivity()
     var RootRef = Firebase.database.reference
     var stockRef = RootRef.child("stock")
     var cnt: Int = 0
-    var meat_str = arrayOf("avocado","bacon","chicken_breast","chicken_breast_ham","chicken_teriyaki","egg_mayo",
-        "ham","pepperoni","pulled_pork","rotisserie","salami","shrimp","spicy_bbq","steak","tuna")
-
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -61,6 +58,8 @@ class MeatSelect : AppCompatActivity()
                         MeatImageList[cnt].setCompoundDrawablesWithIntrinsicBounds(
                             null, getDrawable(R.drawable.sauce_none_xml), null, null
                         )
+                        MeatImageList[cnt].setBackgroundResource(R.drawable.corner_button3)
+                        MeatImageList[cnt].setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
                         MeatImageList[cnt].isEnabled = false;
                         MeatImageList[cnt].isClickable = false;
                     }

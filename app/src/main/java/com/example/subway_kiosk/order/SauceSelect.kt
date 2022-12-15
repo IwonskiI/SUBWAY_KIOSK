@@ -9,6 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.subway_kiosk.R
 import com.example.subway_kiosk.util.Sandwich
+import com.example.subway_kiosk.util.Stock
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlin.system.exitProcess
 
 class SauceSelect : AppCompatActivity()
@@ -17,10 +23,55 @@ class SauceSelect : AppCompatActivity()
     var shopping_cart = arrayListOf<Sandwich?>()
     var sauceBtnList = arrayListOf<Button>()
 
+    var RootRef = Firebase.database.reference
+    var stockRef = RootRef.child("stock")
+    var cnt: Int = 0
+    var sauce_str = arrayOf("chipotle","honey","horseradish","hot_chili","italianDressing","mayonnaise",
+        "mustard","olive","pepper","ranch","redWine","salt","smoke","sweet_chili","sweet_onion")
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sauce_select)
+
+        val SauceImageList = arrayListOf<Button>(
+            findViewById(R.id.chipotle),
+            findViewById(R.id.honeyMustard),
+            findViewById(R.id.horseradish),
+            findViewById(R.id.hotChilli),
+            findViewById(R.id.italianDressing),
+            findViewById(R.id.mayonnaise),
+            findViewById(R.id.mustard),
+            findViewById(R.id.oliveOil),
+            findViewById(R.id.pepper),
+            findViewById(R.id.ranch),
+            findViewById(R.id.redWine),
+            findViewById(R.id.salt),
+            findViewById(R.id.smokeBBQ),
+            findViewById(R.id.sweetChili),
+            findViewById(R.id.sweetOnion),
+        )
+
+        stockRef.child("sauce").addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (item in snapshot.children) {
+                    var sauce : Stock = item.getValue(Stock::class.java)!!
+                    if(sauce.num < 1){
+                        SauceImageList[cnt].setCompoundDrawablesWithIntrinsicBounds(
+                            null, getDrawable(R.drawable.sauce_none_xml), null, null
+                        )
+                        SauceImageList[cnt].setBackgroundResource(R.drawable.corner_button3)
+                        SauceImageList[cnt].setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
+                        SauceImageList[cnt].isEnabled = false;
+                        SauceImageList[cnt].isClickable = false;
+                    }
+                    cnt++;
+                }
+                cnt = 0;
+            }
+            override fun onCancelled(error: DatabaseError) {
+                print(error.message)
+            }
+        } )
 
         sauceBtnList.add(findViewById(R.id.sweetOnion))
         sauceBtnList.add(findViewById(R.id.honeyMustard))
