@@ -5,10 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.util.Log
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.subway_kiosk.databinding.ActivityMainBinding
 import com.example.subway_kiosk.order.MeatSelect
 import com.example.subway_kiosk.util.Sandwich
+import com.example.subway_kiosk.util.cartAdapter
 
 class MainActivity : AppCompatActivity()
 {
@@ -21,7 +26,7 @@ class MainActivity : AppCompatActivity()
         setContentView(binding.root)
 
         val regularorder = findViewById<Button>(R.id.regular_order)
-        val shop = findViewById<TextView>(R.id.shopping_cart)
+        val shop = findViewById<RecyclerView>(R.id.shopping_cart)
         val pay_btn = findViewById<Button>(R.id.payment)
 
         regularorder.setOnClickListener{
@@ -37,8 +42,12 @@ class MainActivity : AppCompatActivity()
             shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             shopping_cart.add(intent.getParcelableExtra<Sandwich>("selectedSandwich"))
             for (item in shopping_cart) {
-                shop.setText(shop.text.toString() + item?.getSandwichName() + "  +  " + item?.getCookieName() + '\n')
+                //shop.setText(shop.text.toString() + item?.getSandwichName() + "  +  " + item?.getCookieName() + '\n')
             }
+            Log.d("cart",shopping_cart.toString())
+            binding.shoppingCart.layoutManager= LinearLayoutManager(this)
+            binding.shoppingCart.adapter= cartAdapter(shopping_cart)
+            binding.shoppingCart.addItemDecoration(DividerItemDecoration(this,LinearLayoutManager.VERTICAL))
         }
         else{
             shop.visibility = View.INVISIBLE
