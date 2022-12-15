@@ -54,7 +54,7 @@ class VegeSelect : AppCompatActivity()
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (item in snapshot.children) {
                     var vege : Stock = item.getValue(Stock::class.java)!!
-                    if(vege.num < 1){
+                    if(vege.num < 5){
                         VegeImageList[cnt].setCompoundDrawablesWithIntrinsicBounds(
                             null, getDrawable(R.drawable.sauce_none_xml), null, null
                         )

@@ -6,9 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class TakeOutActivity : AppCompatActivity()
 {
+    var RootRef = Firebase.database.reference
+    var stockRef = RootRef.child("order_num")
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -19,11 +23,17 @@ class TakeOutActivity : AppCompatActivity()
         val manager_login = findViewById<Button>(R.id.logo_manager)
 
         tohere_btn.setOnClickListener{
+            if(intent.hasExtra("order")){
+                stockRef.child("num").setValue(intent.getIntExtra("order",0))
+            }
             val nextIntent = Intent(this@TakeOutActivity, MainActivity::class.java)
             startActivity(nextIntent)
         }
 
         togo_btn.setOnClickListener{
+            if(intent.hasExtra("order")){
+                stockRef.child("num").setValue(intent.getIntExtra("order",0))
+            }
             val nextIntent = Intent(this@TakeOutActivity, MainActivity::class.java)
             startActivity(nextIntent)
         }
