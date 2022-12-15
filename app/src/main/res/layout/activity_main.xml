@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="40dp"
+
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -82,14 +82,15 @@
             android:paddingHorizontal="5dp"
             android:orientation="vertical">
 
-            <TextView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/shopping_cart"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/corner_button3"></TextView>
+                android:padding="10dp"
+                android:background="@drawable/corner_button3"></androidx.recyclerview.widget.RecyclerView>
 
             <Button
                 android:id="@+id/payment"
