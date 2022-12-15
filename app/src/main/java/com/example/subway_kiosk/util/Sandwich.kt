@@ -335,6 +335,29 @@ class Sandwich(
             18 to R.drawable.sandwich_veggie_xml,
         )
 
+        val hashMapIDtoInfo = hashMapOf<Int, String>(
+            1 to "페퍼로니 3장\n살라미 3장\n햄 2장",
+            2 to "닭가슴살 햄 2장\n햄 1장\n베이컨 2장",
+            3 to "햄 4장",
+            4 to "닭가슴살 햄 3장\n베이컨 2장\n아보카도 1스쿱",
+            5 to "베이컨 4장",
+            6 to "페퍼로니 5장\n살라미 5장",
+            7 to "로티세리 치킨 1스쿱",
+            8 to "닭가슴살 햄 4장",
+            9 to "풀드포크 바비큐 1스쿱",
+            10 to "풀드포크 바비큐 1스쿱",
+            11 to "스파이시 바비큐 1스쿱",
+            12 to "닭가슴살 1장",
+            13 to "스테이크 1스쿱",
+            14 to "데리야끼 치킨 1스쿱",
+            15 to "새우 5마리",
+            16 to "에그마요 2스쿱",
+            17 to "참치 2스쿱",
+            18 to "각종 야채",
+        )
+
+
+
         val menuList = arrayListOf<Sandwich>(
             Sandwich(
                 0,
@@ -352,7 +375,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(201, 101, 401),
                 false,
                 0,
                 5400
@@ -362,7 +385,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(401, 101),
                 false,
                 0,
                 5900
@@ -372,7 +395,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(102),
                 false,
                 0,
                 4800
@@ -382,7 +405,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(401, 204),
                 false,
                 0,
                 6500
@@ -392,7 +415,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(103, 401, 202),
                 false,
                 0,
                 5400
@@ -402,7 +425,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(402, 202),
                 false,
                 0,
                 5700
@@ -412,7 +435,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(103),
                 false,
                 0,
                 6100
@@ -422,7 +445,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(401, 101),
                 false,
                 0,
                 5300
@@ -432,7 +455,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(104),
                 false,
                 0,
                 6000
@@ -442,7 +465,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(501, 503),
                 false,
                 0,
                 6000
@@ -452,7 +475,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(402, 202),
                 false,
                 0,
                 6100
@@ -462,7 +485,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(101),
                 false,
                 0,
                 6100
@@ -472,7 +495,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(202, 104),
                 false,
                 0,
                 6500
@@ -482,7 +505,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(104, 103),
                 false,
                 0,
                 5700
@@ -492,7 +515,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(103,401, 201),
                 false,
                 0,
                 5900
@@ -502,7 +525,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(401, 103),
                 false,
                 0,
                 4300
@@ -512,7 +535,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(201, 103),
                 false,
                 0,
                 4800
@@ -522,7 +545,7 @@ class Sandwich(
                 1,
                 1,
                 Vegetable(true, true, true, true, true, true, true, true, false),
-                arrayListOf<Int>(301, 101),
+                arrayListOf<Int>(302),
                 false,
                 0,
                 3900

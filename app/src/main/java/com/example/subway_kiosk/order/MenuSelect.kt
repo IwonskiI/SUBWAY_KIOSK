@@ -124,6 +124,9 @@ class MenuSelect : AppCompatActivity()
 
                 var sandwichImgView = dialog.findViewById<ImageView>(R.id.dialog_img)
                 sandwichImgView?.setImageResource(Sandwich.hashMapIDtoXML.getValue(it.getSandwichID()))
+
+                var sandwichInfo = dialog.findViewById<TextView>(R.id.dialog_info)
+                sandwichInfo?.setText(Sandwich.hashMapIDtoInfo.getValue(it.getSandwichID()))
             }
         }
 
