@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.marginTop
 import com.example.subway_kiosk.databinding.ActivityMainBinding
+import com.example.subway_kiosk.order.FastOrder
 import com.example.subway_kiosk.order.MeatSelect
 import com.example.subway_kiosk.util.Sandwich
 
@@ -21,13 +24,25 @@ class MainActivity : AppCompatActivity()
         setContentView(binding.root)
 
         val regularorder = findViewById<Button>(R.id.regular_order)
+        val fastorder = findViewById<Button>(R.id.fast_order)
         val shop = findViewById<TextView>(R.id.shopping_cart)
         val pay_btn = findViewById<Button>(R.id.payment)
+        val home_btn = findViewById<Button>(R.id.home)
 
         regularorder.setOnClickListener{
             val nextIntent = Intent(this@MainActivity, MeatSelect::class.java)
             nextIntent.putExtra("shoppingCart",shopping_cart)
             startActivity(nextIntent)
+        }
+
+        fastorder.setOnClickListener{
+            val nextIntent = Intent(this@MainActivity, FastOrder::class.java)
+            nextIntent.putExtra("shoppingCart",shopping_cart)
+            startActivity(nextIntent)
+        }
+
+        home_btn.setOnClickListener {
+            finish()
         }
 
 
