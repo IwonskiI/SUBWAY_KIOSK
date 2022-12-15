@@ -62,9 +62,6 @@ class MainActivity : AppCompatActivity()
             pay_btn.visibility = View.VISIBLE
             shopping_cart = intent.getParcelableArrayListExtra<Sandwich>("shoppingCart")!!
             shopping_cart.add(intent.getParcelableExtra<Sandwich>("selectedSandwich"))
-            for (item in shopping_cart) {
-                //shop.setText(shop.text.toString() + item?.getSandwichName() + "  +  " + item?.getCookieName() + '\n')
-            }
             Log.d("cart",shopping_cart.toString())
             binding.shoppingCart.layoutManager= LinearLayoutManager(this)
             binding.shoppingCart.adapter= cartAdapter(shopping_cart)

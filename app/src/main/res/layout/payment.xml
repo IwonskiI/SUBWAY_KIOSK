@@ -38,18 +38,30 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/shopping_cart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:layout_marginBottom="15dp"
             android:layout_marginHorizontal="30dp"
             android:padding="10dp"
             android:background="@drawable/corner_button3"></androidx.recyclerview.widget.RecyclerView>
-
         <TextView
+            android:id="@+id/total"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:background="@drawable/corner_button3"
+            android:layout_marginHorizontal="30dp"
+            android:text = "총 금액: "
+            android:gravity="center"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            />
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginVertical="30dp"
+            android:layout_marginVertical="15dp"
             android:background="@drawable/corner_button3"
             android:gravity="center"
             android:text="결제 수단을 선택해주세요"
@@ -59,8 +71,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="20dp"
             android:paddingHorizontal="5dp"
             android:orientation="horizontal">
 

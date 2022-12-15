@@ -53,7 +53,7 @@
                 android:layout_marginVertical="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/corner_button"
-                android:drawableTop="@drawable/eat_inxml"
+                android:drawableTop="@drawable/easy_xml"
                 android:padding="30dp"
                 android:text="간편 주문"
                 android:textColor="@color/subway_gr"></Button>
@@ -66,7 +66,7 @@
                 android:layout_marginVertical="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/corner_button"
-                android:drawableTop="@drawable/take_outxml"
+                android:drawableTop="@drawable/normal_xml"
                 android:padding="30dp"
                 android:text="일반 주문"
                 android:textColor="@color/subway_gr"></Button>

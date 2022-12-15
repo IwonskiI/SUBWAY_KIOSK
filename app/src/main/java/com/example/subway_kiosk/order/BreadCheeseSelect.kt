@@ -50,7 +50,7 @@ class BreadCheeseSelect : AppCompatActivity()
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (item in snapshot.children) {
                     var bread : Stock = item.getValue(Stock::class.java)!!
-                    if(bread.num < 1){
+                    if(bread.num < 5){
                         //Log.d("hi",BreadImageList[cnt].toString())
                         BreadImageList[cnt].setCompoundDrawablesWithIntrinsicBounds(
                             null, getDrawable(R.drawable.sauce_none_xml), null, null
@@ -73,7 +73,7 @@ class BreadCheeseSelect : AppCompatActivity()
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (item in snapshot.children) {
                     var cheese : Stock = item.getValue(Stock::class.java)!!
-                    if(cheese.num < 1){
+                    if(cheese.num < 5){
                         CheeseImageList[cnt].setCompoundDrawablesWithIntrinsicBounds(
                             null, getDrawable(R.drawable.sauce_none_xml), null, null
                         )

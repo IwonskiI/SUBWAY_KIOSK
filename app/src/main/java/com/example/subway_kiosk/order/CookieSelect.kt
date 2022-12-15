@@ -33,9 +33,6 @@ class CookieSelect : AppCompatActivity()
         cookieLayout.visibility = View.INVISIBLE
         cookieTitle.visibility = View.INVISIBLE
 
-        if(intent.hasExtra("selectedSandwich"))
-            Log.d("hihi","hihi")
-
         if (intent.hasExtra("selectedSandwich"))
         {
             selectedSandwich = intent.getParcelableExtra<Sandwich>("selectedSandwich")!!
@@ -87,6 +84,7 @@ class CookieSelect : AppCompatActivity()
         val selectedBtn = findViewById<Button>(v.id)
         val cookieLayout: GridLayout = findViewById<GridLayout>(R.id.cookie_grid)
         val cookieTitle: TextView = findViewById<TextView>(R.id.cookie_select)
+        val price = selectedSandwich.getPrice()
 
         selectedSet.setBackgroundResource(R.drawable.corner_button3)
         selectedSet.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
@@ -102,6 +100,7 @@ class CookieSelect : AppCompatActivity()
                 selectedSet = selectedBtn
                 selectedSandwich.setCookieID(0)
                 selectedSandwich.setSet(false)
+                selectedSandwich.setPrice(price)
             }
             R.id.setBtn2  ->
             {
@@ -111,6 +110,7 @@ class CookieSelect : AppCompatActivity()
                 selectedSandwich.setCookieID(1)
                 selectedCookie = findViewById(R.id.cookieBtn1)
                 selectedSandwich.setSet(true)
+                selectedSandwich.setPrice(price + 1900)
 
             }
             R.id.cookieBtn1 ->
