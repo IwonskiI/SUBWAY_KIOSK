@@ -190,7 +190,45 @@ class Payment : AppCompatActivity()
                 else set = "SINGLE"
                 val tempMap = mapOf("menu" to item!!.getSandwichName(), "price" to item.getPrice(), "date" to LocalDate.now().toString(), "type" to set)
                 saleRef.push().setValue(tempMap)
-//                stockRef.child("").child(item.get)
+                var MainHM = item.getMainbyID(item.getSandwichID())
+                for ((key, value) in MainHM){
+                    stockRef.child("meat").child(key).child("num").setValue(mainnum[key]!!.minus(value))
+                }
+                var BreadHM = item.getBreadNameByID(item.getBreadID())
+                stockRef.child("bread").child(BreadHM).child("num").setValue(breadnum[BreadHM]!!.minus(1))
+                var cheeseHM = item.getCheeseNameByID(item.getCheeseID())
+                stockRef.child("cheese").child(cheeseHM).child("num").setValue(cheesenum[cheeseHM]!!.minus(1))
+                for(va in item.getSauceIDList()){
+                    var sauceHM = item.getSauceNameByID(va)
+                    stockRef.child("sauce").child(sauceHM).child("num").setValue(saucenum[sauceHM]!!.minus(1))
+                }
+                var vege = item.getVege()
+                var check = false
+                var cnt2 = 0
+                if(vege.getCucumber()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("cucumber").child("num").setValue(vegenum["cucumber"]!!.minus(cnt2))
+                if(vege.getJalapeno()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("jalapeno").child("num").setValue(vegenum["jalapeno"]!!.minus(cnt2))
+                if(vege.getLettuce()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("lettuce").child("num").setValue(vegenum["lettuce"]!!.minus(cnt2))
+                if(vege.getOlive()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("olive").child("num").setValue(vegenum["olive"]!!.minus(cnt2))
+                if(vege.getOnion()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("onion").child("num").setValue(vegenum["onion"]!!.minus(cnt2))
+                if(vege.getPickle()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("pickle").child("num").setValue(vegenum["pickle"]!!.minus(cnt2))
+                if(vege.getPepper()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("pimento").child("num").setValue(vegenum["pimento"]!!.minus(cnt2))
+                if(vege.getTomato()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("tomato").child("num").setValue(vegenum["tomato"]!!.minus(cnt2))
             }
             Toast.makeText(this@Payment, "카드 결제가 완료되었습니다.", Toast.LENGTH_LONG).show()
             val nextIntent = Intent(this@Payment, OrderComplete::class.java)
@@ -205,7 +243,45 @@ class Payment : AppCompatActivity()
                 else set = "SINGLE"
                 val tempMap = mapOf("menu" to item!!.getSandwichName(), "price" to item.getPrice(), "date" to LocalDate.now().toString(), "type" to set)
                 saleRef.push().setValue(tempMap)
-//                stockRef.child("").child(item.get)
+                var MainHM = item.getMainbyID(item.getSandwichID())
+                for ((key, value) in MainHM){
+                    stockRef.child("meat").child(key).child("num").setValue(mainnum[key]!!.minus(value))
+                }
+                var BreadHM = item.getBreadNameByID(item.getBreadID())
+                stockRef.child("bread").child(BreadHM).child("num").setValue(breadnum[BreadHM]!!.minus(1))
+                var cheeseHM = item.getCheeseNameByID(item.getCheeseID())
+                stockRef.child("cheese").child(cheeseHM).child("num").setValue(cheesenum[cheeseHM]!!.minus(1))
+                for(va in item.getSauceIDList()){
+                    var sauceHM = item.getSauceNameByID(va)
+                    stockRef.child("sauce").child(sauceHM).child("num").setValue(saucenum[sauceHM]!!.minus(1))
+                }
+                var vege = item.getVege()
+                var check = false
+                var cnt2 = 0
+                if(vege.getCucumber()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("cucumber").child("num").setValue(vegenum["cucumber"]!!.minus(cnt2))
+                if(vege.getJalapeno()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("jalapeno").child("num").setValue(vegenum["jalapeno"]!!.minus(cnt2))
+                if(vege.getLettuce()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("lettuce").child("num").setValue(vegenum["lettuce"]!!.minus(cnt2))
+                if(vege.getOlive()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("olive").child("num").setValue(vegenum["olive"]!!.minus(cnt2))
+                if(vege.getOnion()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("onion").child("num").setValue(vegenum["onion"]!!.minus(cnt2))
+                if(vege.getPickle()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("pickle").child("num").setValue(vegenum["pickle"]!!.minus(cnt2))
+                if(vege.getPepper()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("pimento").child("num").setValue(vegenum["pimento"]!!.minus(cnt2))
+                if(vege.getTomato()) cnt2 = 1
+                else cnt2 = 0
+                stockRef.child("vege").child("tomato").child("num").setValue(vegenum["tomato"]!!.minus(cnt2))
             }
             Toast.makeText(this@Payment, "페이 결제가 완료되었습니다.", Toast.LENGTH_LONG).show()
             val nextIntent = Intent(this@Payment, OrderComplete::class.java)
