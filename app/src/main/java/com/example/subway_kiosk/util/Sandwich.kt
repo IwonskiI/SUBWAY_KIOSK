@@ -118,6 +118,91 @@ class Sandwich(
         return price
     }
 
+    fun getMainbyID(findID:Int): HashMap<String,Int>
+    {
+        var MainHash = HashMap<String,Int>()
+        when(findID){
+            1 -> {
+                MainHash.put("pepperoni",3)
+                MainHash.put("salami",3)
+                MainHash.put("ham",2)
+            }
+            2 -> {
+                MainHash.put("chicken_breast_ham",2)
+                MainHash.put("bacon",2)
+                MainHash.put("ham",1)
+            }
+            3 -> MainHash.put("ham",4)
+            4 -> {
+                MainHash.put("chicken_breast_ham",3)
+                MainHash.put("bacon",2)
+                MainHash.put("avocado",1)
+            }
+            5 -> MainHash.put("bacon",4)
+            6 -> {
+                MainHash.put("pepperoni",5)
+                MainHash.put("salami",5)
+            }
+            7 -> MainHash.put("rotisserie",1)
+            8 -> MainHash.put("chicken_breast_ham",4)
+            9 -> MainHash.put("pulled_pork",1)
+            10 -> MainHash.put("pulled_pork",1)
+            11 -> MainHash.put("spicy_bbq",1)
+            12 -> MainHash.put("chicken_breast",1)
+            13 -> MainHash.put("steak",1)
+            14 -> MainHash.put("chicken_teriyaki",1)
+            15 -> MainHash.put("shrimp",5)
+            16 -> MainHash.put("egg_mayo",2)
+            17 -> MainHash.put("tuna",2)
+            18 -> MainHash
+        }
+        return MainHash
+    }
+
+    fun getBreadNameByID(breadID: Int):String{
+        var breadName: String = ""
+        when(breadID){
+            1    -> breadName = "white"
+            2    -> breadName = "honey"
+            3    -> breadName = "wheet"
+            4    -> breadName = "pamasan"
+            5    -> breadName = "hati"
+            6    -> breadName = "flat"
+        }
+        return breadName
+    }
+    fun getCheeseNameByID(cheeseID: Int):String{
+        var cheeseName: String = ""
+        when(cheeseID){
+            1    -> cheeseName = "american"
+            2    -> cheeseName = "mozzarella"
+            3    -> cheeseName = "shred"
+        }
+        return cheeseName
+    }
+
+    fun getSauceNameByID(sauceID: Int):String{
+        var sauceName: String = ""
+        when(sauceID){
+            101 -> sauceName = "sweet_onion"
+            102 -> sauceName = "honey"
+            103 -> sauceName = "sweet_chili"
+            104 -> sauceName = "smoke"
+            201 -> sauceName = "hot_chili"
+            202 -> sauceName = "chipotle"
+            203 -> sauceName = "mustard"
+            204 -> sauceName = "horseradish"
+            301 -> sauceName = "italianDressing"
+            302 -> sauceName = "redWine"
+            401 -> sauceName = "ranch"
+            402 -> sauceName = "mayonnaise"
+            501 -> sauceName = "olive"
+            502 -> sauceName = "salt"
+            503 -> sauceName = "pepper"
+        }
+        return sauceName
+    }
+
     fun setSandwichID(newID: Int)
     {
         sandwichID = newID

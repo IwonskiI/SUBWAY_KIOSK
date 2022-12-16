@@ -66,6 +66,7 @@ class ManagerSauceSelect : AppCompatActivity()
         passBtn.setBackgroundResource(R.drawable.corner_button3_selected)
         passBtn.setTextColor(ContextCompat.getColor(applicationContext, R.color.white))
         passBtn.setOnClickListener {
+            finish()
             val nextIntent = Intent(this@ManagerSauceSelect, ManagerActivity::class.java)
             stockRef.child(intent.getStringExtra("menuNum")!!).setValue(intent.getParcelableExtra<Sandwich>("selectedSandwich"))
             Toast.makeText(this@ManagerSauceSelect, "추천 메뉴가 변경되었습니다.", Toast.LENGTH_LONG).show()

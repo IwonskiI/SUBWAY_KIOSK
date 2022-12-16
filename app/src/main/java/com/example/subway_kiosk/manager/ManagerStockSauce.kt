@@ -66,18 +66,20 @@ class ManagerStockSauce : AppCompatActivity()
         } )
 
         binding.home.setOnClickListener{
-            val nextIntent = Intent(this@ManagerStockSauce, ManagerActivity::class.java)
-            startActivity(nextIntent)
+            finish()
         }
         binding.manageMeat.setOnClickListener{
+            finish()
             val nextIntent = Intent(this@ManagerStockSauce, ManagerStockMeat::class.java)
             startActivity(nextIntent)
         }
         binding.manageBread.setOnClickListener{
+            finish()
             val nextIntent = Intent(this@ManagerStockSauce, ManagerStockBread::class.java)
             startActivity(nextIntent)
         }
         binding.manageVege.setOnClickListener{
+            finish()
             val nextIntent = Intent(this@ManagerStockSauce, ManagerStockVege::class.java)
             startActivity(nextIntent)
         }

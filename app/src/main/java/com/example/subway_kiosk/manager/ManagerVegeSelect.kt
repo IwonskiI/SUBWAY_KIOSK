@@ -57,6 +57,7 @@ class ManagerVegeSelect : AppCompatActivity()
 
         val passBtn = findViewById<Button>(R.id.breadCheeseSelect_pass)
         passBtn.setOnClickListener {
+            finish()
             val nextIntent = Intent(this@ManagerVegeSelect, ManagerSauceSelect::class.java)
             nextIntent.putExtra("selectedSandwich", selectedSandwich)
             nextIntent.putExtra("menuNum",intent.getStringExtra("menuNum"))
