@@ -17,16 +17,19 @@ class ManagerEditMenu : AppCompatActivity(){
 
         setContentView(binding.root)
         binding.recommend.setOnClickListener{
+            finish()
             val nextIntent = Intent(this@ManagerEditMenu, ManagerMeatSelect::class.java)
             nextIntent.putExtra("menuNum", string_arr[0])
             startActivity(nextIntent)
         }
         binding.cheap.setOnClickListener{
+            finish()
             val nextIntent = Intent(this@ManagerEditMenu, ManagerMeatSelect::class.java)
             nextIntent.putExtra("menuNum", string_arr[1])
             startActivity(nextIntent)
         }
         binding.most.setOnClickListener{
+            finish()
             val nextIntent = Intent(this@ManagerEditMenu, ManagerMeatSelect::class.java)
             nextIntent.putExtra("menuNum", string_arr[2])
             startActivity(nextIntent)

@@ -29,16 +29,19 @@ class ManagerActivity : AppCompatActivity() {
         }
 
         editMenuBtn.setOnClickListener {
+            finish()
             val intent = Intent(this, ManagerEditMenu::class.java)
             startActivity(intent)
         }
 
         stockStatusBtn.setOnClickListener {
+            finish()
             val intent = Intent(this, ManagerStockMeat::class.java)
             startActivity(intent)
         }
 
         sellStatusBtn.setOnClickListener {
+            finish()
             val intent = Intent(this, ManagerSale::class.java)
             startActivity(intent)
         }
